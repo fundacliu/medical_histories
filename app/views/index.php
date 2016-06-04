@@ -4,6 +4,12 @@
 	<?php echo $head; ?>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-	<?php echo $hello; ?>
+	<?php echo $menuSuperior; ?>
+	<?php echo $header; ?>
+	<?php echo $modulos; ?>
+	<?php echo $busqueda; ?>
+
+
+	<?php echo $script; ?>
 </body>
 </html>

@@ -10,7 +10,11 @@ Flight::set('flight.views.path', VIEWS);
 
 Flight::route('/', function(){
 	Flight::render('head', [], 'head');
-	Flight::render('hello', [], 'hello');
+	Flight::render('menuSuperior', [], 'menuSuperior');
+	Flight::render('script', [], 'script');
+	Flight::render('header', [], 'header');
+	Flight::render('modulos', [], 'modulos');
+	Flight::render('busqueda', [], 'busqueda');
     Flight::render('index', []); 
 });
 
