@@ -1,3 +1,4 @@
+
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -9,24 +10,6 @@
 				<i class="glyphicon glyphicon-book"></i>  <span class="light">Historias Medicas</span>
 			</a>
 		</div>
-
-		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-			<ul class="nav navbar-nav">
-				<li class="hidden">
-					<a href="#page-top"></a>
-				</li>
-				<li>
-					<a class="page-scroll" href="#about">Modulos</a>
-				</li>
-				<li>
-					<a class="page-scroll" href="#download">Busqueda</a>
-				</li>
-				<li>
-					<a class="page-scroll" href="#contact">Contact</a>
-				</li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
 
 		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			<ul class="nav navbar-nav">
@@ -164,22 +147,6 @@
 							<p>Control de Asistencia e Inasistencia</p>
 							<button class="boton btn btn-default btn-lg">Accede</button>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="media">
-				<div class="icono Modulos">
-					<div class="media-left">
-						<a href="#">
-							<img src="img/bb.png" height="100" width="100" >
-						</a>
-					</div>
-					<div class="media-body justificar">
-						<h3 class="media-heading">Control Prenatal</h3>
-						<p>Control de Asistencia e Inasistencia</p>
-						<button class="boton btn btn-default btn-lg">Accede</button>
 					</div>
 				</div>
 			</div>
