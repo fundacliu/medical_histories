@@ -1,5 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Chewy|Handlee|Cookie|Tangerine|Bad+Script);
+.Barra{
+    border: 1px solid #009b90;
+    font-size: 1em;
+    padding: 2%;
+    border-radius: 3%;
+    color: black;
+}
+.Barra:hover{
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    font-weight: bolder;
+    border: 1px solid #009b90;
+    overflow: auto;
+    padding: 1.9%;
+    cursor: pointer;
 
+}
 .Modulos{
     margin: 10% auto;
     padding: 10%;
@@ -313,7 +328,7 @@ a:focus {
     }
 
     .download-section {
-        padding: 100px 0;
+        padding: 25% 0;
     }
 }
 .btn {
