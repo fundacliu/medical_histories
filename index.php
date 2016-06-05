@@ -1,7 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'lib/php-activerecord/ActiveRecord.php';
-define('APP', 'app/');
+define('APP', './app/');
 define('VIEWS', APP . 'views');
 define('MODELS', APP . 'models');
 define('CONTROLLERS', APP . 'controllers');
