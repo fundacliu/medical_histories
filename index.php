@@ -14,6 +14,8 @@ Flight::route('/', function(){
 	Flight::render('header', [], 'header');
 	Flight::render('modulos', [], 'modulos');
 	Flight::render('busqueda', [], 'busqueda');
+	Flight::render('FormularioBase', [], 'FormularioBase');
+	Flight::render('headForm', [], 'headForm');
     Flight::render('index', []); 
 });
 
