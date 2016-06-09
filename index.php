@@ -19,6 +19,14 @@ Flight::route('/', function(){
     Flight::render('index', []); 
 });
 
+Flight::route('/base', function(){
+	Flight::render('headBase', [], 'headBase');
+	Flight::render('menuSuperior', [], 'menuSuperior');
+	Flight::render('FormularioBase', [], 'FormularioBase');
+	Flight::render('headForm', [], 'headForm');
+    Flight::render('base', []); 
+});
+
 /*
 $author = new Sexo();
 $author->setSexo('Masculino');

@@ -8,10 +8,12 @@
 <link href="./public/grayscale/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="./public/grayscale/css/grayscale.css" rel="stylesheet">
+<link href="./public/grayscale/css/styles.css" rel="stylesheet">
+<link href="./public/grayscale/css/switchery.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href="./public/grayscale/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <title>Historias Medicas</title>
+<script type="text/javascript" src="./public/grayscale/js/switchery.min.js"></script>
