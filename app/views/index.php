@@ -8,10 +8,6 @@
 	<?php echo $header; ?>
 	<?php echo $modulos; ?>
 	<?php echo $busqueda; ?>
-
-
 	<?php echo $script; ?>
-
-
 </body>
 </html>
