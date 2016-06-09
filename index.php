@@ -17,8 +17,10 @@ Flight::route('/', function(){
     Flight::render('index', []); 
 });
 
+/*
 $author = new Sexo();
 $author->setSexo('Masculino');
 $author->save();
+*/
 
 Flight::start();
