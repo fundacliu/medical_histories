@@ -15,7 +15,7 @@
                             <p class="ModuloEnca">Historia Quirurgica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <button class="boton btn btn-default btn-lg" href="/headForm.php">Registrar</button>
+                            <button class="boton btn btn-default btn-lg" href="/base">Registrar</button>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             <p class="ModuloEnca">Historia Pedriatrica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <button class="boton btn btn-default btn-lg" href="/headForm.php">Registrar</button>
+                            <button class="boton btn btn-default btn-lg" href="/base">Registrar</button>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <p class="ModuloEnca">Historial de Aborto</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <button class="boton btn btn-default btn-lg" href="/headForm.php">Registrar</button>
+                            <button class="boton btn btn-default btn-lg" href="/base">Registrar</button>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                             <p class="ModuloEnca">Historia Completa</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <button class="boton btn btn-default btn-lg" href="/headForm.php">Registrar</button>
+                            <button class="boton btn btn-default btn-lg" href="/base">Registrar</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                             <p class="ModuloEnca">Historia Obstetrica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <button class="boton btn btn-default btn-lg" href="/headForm.php">Registrar</button>
+                            <button class="boton btn btn-default btn-lg" href="/base">Registrar</button>
                         </div>
                     </div>
                 </div>
