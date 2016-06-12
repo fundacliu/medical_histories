@@ -1,5 +1,13 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'lib/choco/orm.php';
+//require_once 'config/autoloader.php';
+
+/*
+$a= new Historias();
+$a->save();
+var_dump($a);
+*/
 define('APP', './app/');
 define('VIEWS', APP . 'views');
 define('MODELS', APP . 'models');
@@ -26,11 +34,5 @@ Flight::route('/base', function(){
 	Flight::render('headForm', [], 'headForm');
     Flight::render('base', []); 
 });
-
-/*
-$author = new Sexo();
-$author->setSexo('Masculino');
-$author->save();
-*/
 
 Flight::start();
