@@ -2,19 +2,17 @@ medical_histories:
     personas:
         nombres: 
             type: varchar
-            size: 128
+            size: 50
             required: true
         apellidos: 
             type: varchar
-            size: 128
+            size: 50
             required: true
         cedula: 
-            type: varchar
-            size: 128
+            type: int
             required: true
         nacimiento: 
-            type: varchar
-            size: 128
+            type: date
             required: true
         direccion: 
             type: varchar
@@ -22,21 +20,20 @@ medical_histories:
             required: true
         profesion: 
             type: varchar
-            size: 128
+            size: 20
             required: true
         Lugar_nacimiento: 
             type: varchar
-            size: 128
+            size: 30
             required: true
         registro: 
-            type: varchar
-            size: 128
+            type: date
             required: true
         id_sexo: 
-            type: varchar
-            size: 128
+            type: int
+            join: sexo
             required: true
         id_tipo_cedula: 
-            type: varchar
-            size: 128
+            type: int
+            join: tipo_cedula
             required: true

@@ -2,3 +2,5 @@ vendor/
 phpmyadmin/
 generated-sql/
 composer.lock
+app/models/
+config/autoloader.php

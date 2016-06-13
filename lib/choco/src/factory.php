@@ -41,8 +41,10 @@ class Factory {
 		chdir(__DIR__ . '/../../../');
 		if (is_dir('app/models'))
 			chdir('app/models');
-		else
+		else {
 			mkdir('app/models');
+			chdir('app/models');
+		}
 
 		if (file_exists($name_entities . '.php'))
 			unlink($name_entities . '.php');
@@ -71,8 +73,10 @@ class Factory {
 			chdir(__DIR__ . '/../../../');
 			if (is_dir('app/models/db'))
 				chdir('app/models/db');
-			else
+			else {
 				mkdir('app/models/db');
+				chdir('app/models/db');
+			}
 
 			if (file_exists($name_database . '.php'))
 				unlink($name_database . '.php');
@@ -121,7 +125,7 @@ class Factory {
 			}
 			try {
 				$db = new PDO($driver . ':host=' . $host . ';dbname=' . $name_database . ';', $user, $pass);
-				echo 'Connected to database';
+				echo 'Connected to database ' . $name_database . "\n";
 			} catch(PDOException $e) {
 				echo $e->getMessage();
 			}
@@ -135,11 +139,15 @@ class Factory {
 		$num = count($filenames);
 		$sql = '';
 		$delete = '';
+		$fill = '';
+		$insert = [];
+		$num_iterator = 0;
+		$fk = '';
+		
 		for ($i = 2; $i < $num; $i++) { 
 			$entities = Yaml::read($path . $filenames[$i]);
 			foreach ($entities as $name_database => $property) {
 				foreach ($property as $name_entities => $value) {
-					
 					$sql = $sql . 'CREATE TABLE ' . $name_database . '.' . $name_entities . ' (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, ';
 					$delete = $delete . 'DROP TABLE IF EXISTS '. $name_database . '.' . $name_entities . ';';
 					foreach ($value as $k => $v) {
@@ -148,66 +156,79 @@ class Factory {
 							$sql = $sql . $v['type'] . '(' . $v['size'] . ') ';
 						else
 							$sql = $sql . $v['type'] . ' ';
+						if (isset($v['join']) && $v['join'] != ''){
+							$sql = $sql . 'UNSIGNED  ';
+							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD INDEX(' . $k . ');' . "\n";
+							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD CONSTRAINT fk_' . $k . ' ';
+							$fk = $fk .'FOREIGN KEY (' . $k . ') REFERENCES ' . $name_database . '.' . $v['join'] .  ' (id); ' . "\n";
+						}
 						if (isset($v['required']) && $v['required'] == true) 
 							$sql = $sql . 'NOT NULL , ';
 						else
 							$sql = $sql . ' , ';
+
+						if (isset($v['fill'])) {
+							$insert[$num_iterator] = $v['fill'];
+							$num_iterator = $num_iterator + 1;
+						}
+
+						
 					}
+
+
 					$sql = trim($sql, ', ');
 					$sql = $sql . ");\n";
-					var_dump($delete . $sql);
+					// insert default values
+					$num_iterator_for = count($insert);
+					if ($insert != [] && $num_iterator_for > 0) {
+						$num_iterator_for = count($insert[0]);
+					}
+					else
+						$num_iterator_for = 0;
+
+					if ($insert != [] && $num_iterator_for > 0) {
+						$num_iterator_for = count($insert[0]);
+						$num_keys = count($insert);
+						$fill = $fill . 'INSERT INTO '. $name_database . '.' . $name_entities . ' VALUES';
+						for ($j=0; $j < $num_iterator_for; $j++) { 
+							$fill = $fill . ' (null, ';
+							for ($k=0; $k < $num_keys; $k++) { 
+								$fill = $fill . '\'' . $insert[$k][$j] . '\'), ( ';
+							}
+							$fill = trim($fill, ', (');
+							$fill = $fill . ",";
+						}
+						$fill = trim($fill, ', (');
+						$fill = $fill . ";\n";
+					}
 					try {
+						//var_dump($delete . $sql);
 						$db->query($delete . $sql);
 						echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 					} catch(PDOException $e) {
-						echo $e->getMessage();
+						echo "error: " . $e->getMessage();
 					}
 					$sql = '';
 					$delete = '';
+					$num_iterator = 0;
 				}
 			}
 		}
-
-
-/*
-		$sql = '';
-		$delete = '';
-		foreach($model as $database=>$entities) {
-			foreach($entities as $name_entities=>$values) {
-				$sql = $sql . 'CREATE TABLE ' . $name_entities . ' (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, ';
-				$delete = $sql . 'DROP TABLE IF EXISTS ' . $name_entities . ';';
-				foreach ($values as $name_value => $property) {
-					var_dump($property);
-					$sql = $sql . $name_value;
-					//foreach($property as $name_property=>$value_final) {
-
-						// - $value = $value . '\'' . $name_property . '\' => \'' . $value_final . '\', ';
-						//$map = $map . '\'' . $name_property . '\' => \'' . $value_final . '\', ';
-					//}
-				}
-				//$value = trim($value, ', ');
-				//$map = $map . $value . '], ';
-			}
+		try {
+			//var_dump($fk . $fill);
+			$db->query($fk . $fill);
+			echo $name_database . '.' . $name_entities . ' has been created' . "\n";
+		} catch(PDOException $e) {
+			echo "error: " . $e->getMessage();
 		}
-/*
-		CREATE TABLE hotel (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    activo TINYINT(1) DEFAULT '1' NOT NULL,
-    url VARCHAR(255),
-    UNIQUE INDEX url_idx (url)) DEFAULT CHARACTER SET utf8
-    COLLATE utf8_general_ci ENGINE = InnoDB;*/
-/*
-		CREATE TABLE IF NOT EXIST `CMDNNA`.`a` ( `id` INT NOT NULL AUTO_INCREMENT , `a` INT NOT NULL , `b` DATE NOT NULL , `c` VARCHAR(12) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
-		*/
 	}
 	private static function php_start() {
 		return 
 '<?php 
 /* generated by Choco ORM
- * docs:
+ * docs: comming soon
  * Author: Jeferson De Freitas
- * licence:
+ * licence: https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 class ';

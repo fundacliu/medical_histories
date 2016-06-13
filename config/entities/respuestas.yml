@@ -1,0 +1,9 @@
+medical_histories:
+    respuestas:
+        respuesta: 
+            type: varchar
+            size: 2
+            required: true
+            fill: 
+              - si
+              - no

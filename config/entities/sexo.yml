@@ -1,0 +1,9 @@
+medical_histories:
+    sexo:
+        sexo: 
+            type: varchar
+            size: 9
+            required: true
+            fill:
+                - masculino
+                - fenenino

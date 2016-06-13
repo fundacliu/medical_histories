@@ -1,0 +1,9 @@
+medical_histories:
+    tipo_cedula:
+        cedula: 
+            type: varchar
+            size: 1
+            required: true
+            fill:
+                - V
+                - E

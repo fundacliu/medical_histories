@@ -14,6 +14,6 @@ class Yaml {
 			return $value;
 		}
 		else
-			trigger_error("invalid path " . $db, E_USER_ERROR);
+			trigger_error("invalid path " . $file, E_USER_ERROR);
 	}
 }
