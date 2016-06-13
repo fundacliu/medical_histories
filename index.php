@@ -22,8 +22,6 @@ Flight::route('/', function(){
 	Flight::render('header', [], 'header');
 	Flight::render('modulos', [], 'modulos');
 	Flight::render('busqueda', [], 'busqueda');
-	Flight::render('FormularioBase', [], 'FormularioBase');
-	Flight::render('headForm', [], 'headForm');
     Flight::render('index', []); 
 });
 
@@ -32,7 +30,23 @@ Flight::route('/base', function(){
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('FormularioBase', [], 'FormularioBase');
 	Flight::render('headForm', [], 'headForm');
-    Flight::render('base', []); 
+	Flight::render('base', []);
+});
+
+Flight::route('/Login', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('Login', []);
+});
+Flight::route('/Registrar', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('Registrar', []);
+});
+Flight::route('/Recuperar', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('Recuperar', []);
 });
 
 Flight::start();
