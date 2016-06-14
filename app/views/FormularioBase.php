@@ -30,7 +30,7 @@
                 <div class="col-2">  
                     <label>
                         Hora
-                        <input type="date" placeholder="Hora" id="hora" name="hora" tabindex="5">
+                        <input type="text" placeholder="Hora" id="hora" name="hora" tabindex="5">
                     </label>
                 </div>
                 <div class="col-3">      

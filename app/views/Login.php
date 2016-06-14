@@ -5,7 +5,7 @@
 			<div class="login-logo">
 				<a href="#"><b></b>INICIAR SESION</a>
 			</div><!-- /.login-logo -->
-			<form action="/accion/ingresar" method="post">
+			<form action="#" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
 					<input type="email" class="form-control" placeholder="Email" name="email"/>
@@ -18,8 +18,8 @@
 				<div class="row MarginArriba">
 					<div class="col-xs-8">
 						<div class="MarginAbajo">
-							<a href="medical_histories/Recuperar">No Recuerdas Tu Contraseña?</a><br>
-							<a href="medical_histories/Registrar" class="text-center">No Posees Cuenta? Registrate!</a>
+							<a href="Recuperar">No Recuerdas Tu Contraseña?</a><br>
+							<a href="Registrar" class="text-center">No Posees Cuenta? Registrate!</a>
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-4">

@@ -4,7 +4,7 @@
 		<div class="register-logo">
 			<a href="#"><b></b>REGISTRATE</a>
 		</div>
-			<form action="/accion/registro" method="post">
+			<form action="#" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
 					<input type="text" class="form-control" placeholder="Nombre" name="name" value=""/>
@@ -25,7 +25,7 @@
 				<div class="row MarginArriba">
 					<div class="col-xs-8">
 						<div class="MarginAbajo">
-								<a href="medical_histories/Login" class="text-center">Ya Tienes Cuenta? Ingresa</a>       
+								<a href="Login" class="text-center">Ya Tienes Cuenta? Ingresa</a>       
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-4">

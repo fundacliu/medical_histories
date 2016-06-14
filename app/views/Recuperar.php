@@ -4,7 +4,7 @@
 		<div class="register-logo">
 			<a href="#"><b></b>RECUPERAR CONTRASEÑA</a>
 		</div>
-			<form action="/accion/reseteo" method="post">
+			<form action="#" method="post">
 				<input type="hidden" name="_token" value="">
 
 				<div class="form-group has-feedback">
@@ -15,8 +15,8 @@
                 <div class="row MarginArriba">
                     <div class="col-xs-8">
                         <div class="MarginAbajo MarginArriba">
-                            <a href="medical_histories/Login" class="text-center">Ya Tienes Cuenta? Ingresa</a> <br>      
-                            <a href="medical_histories/Registrar" class="text-center">No Posees Cuenta? Registrate!</a>
+                            <a href="Login" class="text-center">Ya Tienes Cuenta? Ingresa</a> <br>      
+                            <a href="Registrar" class="text-center">No Posees Cuenta? Registrate!</a>
                         </div>
                     </div><!-- /.col -->
                     <div class="col-xs-4">
