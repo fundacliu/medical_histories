@@ -77,6 +77,7 @@ Flight::route('/enfermeria', function(){
 
 Flight::route('/clinica', function(){
 	Flight::render('headBase', [], 'headBase');
+	Flight::render('clinicaBase', [], 'clinicaBase');
 	Flight::render('script', [], 'script');
 	Flight::render('clinica', []);
 });
