@@ -130,7 +130,7 @@ form > div > .col-4 {
   height: 86px;
 }
 
-label > input {
+label > input, label > textarea {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -169,7 +169,7 @@ label > select {
   transition: all linear .3s;
 }
 
-label > input:focus, label > select:focus {
+label > input:focus, label > select:focus, label > textarea:focus {
   opacity: 1;
 }
 
