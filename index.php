@@ -1,13 +1,12 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'lib/choco/orm.php';
-require_once 'config/autoloader.php';
+//require_once 'config/autoloader.php';
 
+//$a = new Personas();
+//$a->find("nombres='jeferson'");
+//echo $a->id() . " " . $a->nombres() . " ";
 
-$a = new Personas();
-$a->find("nombres='jeferson'");
-echo $a->id() . " " . $a->nombres() . " ";
-/*
 define('APP', './app/');
 define('VIEWS', APP . 'views');
 define('MODELS', APP . 'models');
@@ -24,7 +23,6 @@ Flight::route('/', function(){
 	Flight::render('busqueda', [], 'busqueda');
     Flight::render('index', []); 
 });
-
 Flight::route('/base', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('menuSuperior', [], 'menuSuperior');
@@ -32,7 +30,6 @@ Flight::route('/base', function(){
 	Flight::render('headForm', [], 'headForm');
 	Flight::render('base', []);
 });
-
 Flight::route('/Login', function(){
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
@@ -48,7 +45,6 @@ Flight::route('/Recuperar', function(){
 	Flight::render('script', [], 'script');
 	Flight::render('Recuperar', []);
 });
-
 Flight::route('/orden', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('script', [], 'script');
@@ -73,29 +69,21 @@ Flight::route('/enfermeria', function(){
 	Flight::render('script', [], 'script');
 	Flight::render('enfermeria', []);
 });
-
-
 Flight::route('/clinica', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('clinicaBase', [], 'clinicaBase');
 	Flight::render('script', [], 'script');
 	Flight::render('clinica', []);
 });
-
 Flight::route('/laboratorio', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('script', [], 'script');
 	Flight::render('laboratorio', []);
 });
-
 Flight::route('/evolucion', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('script', [], 'script');
 	Flight::render('evolucion', []);
 });
 
-
-
-
 Flight::start();
-*/
