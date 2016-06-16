@@ -1,13 +1,13 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'lib/choco/orm.php';
-//require_once 'config/autoloader.php';
+require_once 'config/autoloader.php';
 
+
+$a = new Personas();
+$a->find("nombres='jeferson'");
+echo $a->id() . " " . $a->nombres() . " ";
 /*
-$a= new Historias();
-$a->save();
-var_dump($a);
-*/
 define('APP', './app/');
 define('VIEWS', APP . 'views');
 define('MODELS', APP . 'models');
@@ -50,3 +50,4 @@ Flight::route('/Recuperar', function(){
 });
 
 Flight::start();
+*/

@@ -1,6 +1,6 @@
 medical_histories:
     sexo:
-        sexo: 
+        genero: 
             type: varchar
             size: 9
             required: true

@@ -7,49 +7,113 @@ class Factory {
 		$var = "\tprotected ";
 		$num_values = 0;
 		$functions = '';
-		$map = '$map = [';
+		//$map = '$map = [';
 		$model = Yaml::read($file);
 		$start = '';
 		$function = '';
+		// active record
+		$save = '';
+		$delete = '';
+		$find = '';
+		//$select = '';
+		$find_one = '';
+		$find_array = '';
 		foreach($model as $db=>$entities) {
 			$var = $var . '$db = \'' . $db . '\', ';
 			foreach($entities as $name_entities=>$values) {
 				echo 'entitie ' . $name_entities . ' has been created from ' . $db . "\n";
-				$var = $var . '$name = \'' . $name_entities . '\', ';
+				$var = $var . '$name = \'' . $name_entities . '\', $__id = \'\', $__select = \'*\', ';
 				$start = Self::php_start() . ucwords($name_entities) . ' extends ' . $db  . " {\n";
+				$save = $save . "\n\tpublic function save() {\n";
+				$save = $save . "\t\t" . '$this->query(\'INSERT INTO ' . $db . '.' . $name_entities . ' values(null, \' . ' . "\n\t\t";
+				$delete = $delete . "\n\tpublic function delete" . '($where)' . " {\n";
+				$delete = $delete . "\t\t" . '$this->query("DELETE FROM ' . $db . '.' . $name_entities . ' WHERE $where;");';
+				$delete = $delete . "\n\t}\n";
+
+				//$select = $select . "\n\tpublic function select" . '($select)' . " {\n";
+				//$select = $select . "\t\t" . '$this->__select = $select || \'*\';';
+				//$select = $select . "\n\t}\n";
+
+				$find = $find . "\n\tpublic function find" . '($where)' . " {\n";
+				$find = $find . "\t\t" . '$query = $this->query("SELECT $this->__select FROM ' . $db . '.' . $name_entities . ' WHERE $where;");' . "\n";
+				$find = $find . "\t\t" . '$query = $query->fetchAll(PDO::FETCH_ASSOC);' . "\n";
+				$find = $find . "\t\t" . '$num = count($query);' . "\n";
+				$find = $find . "\t\t" . 'if ($num == 1) {' . "\n";
+				$find = $find . "\t\t\t" . '$query = $query[0];' . "\n";
+				//$this->nombres = $query["nombres"];
+				$function = $function . "\n\tpublic function id() {\n";
+				$function = $function . "\t\t" . 'return $this->__id' . ";\n";
+				$function = $function . "\t}\n";
+
+				$find_one = $find_one . "\t\t\t" . '$this->__id = $query[\'id\'] ' . ";\n";
 				foreach ($values as $name_value => $property) {
 					$num_values = $num_values + 1;
-					$var = $var . '$' . $name_value . " = null, ";
-					$map = $map . '\'' . $name_value . '\', ';
-					$value='';
-					$function = $function . "\n function set" . ucwords($name_value) . " {\n";
-					$function = $function . "\t ";
+					$var = $var . '$__' . $name_value . " = NULL, ";
+					//$map = $map . '\'' . $name_value . '\', ';
+					$value = '';
+					$function = $function . "\n\tpublic function " . $name_value . '($v = NULL) ' . "{\n";
+					$function = $function . "\t\t" . 'if ($v != NULL) ' . "\n";
+					$function = $function . "\t\t\t" . '$this->__' . $name_value . ' = $v' . ";\n";
+					$function = $function . "\t\t" . 'else ' . "\n";
+					$function = $function . "\t\t\t" . 'return $this->__' . $name_value . ";\n";
+					$function = $function . "\t}\n";
+
+					$save = $save . "\"'\" . " . '$this->__' . $name_value . " . \"', \" . ";
+					
+					$find_one = $find_one . "\t\t\t" . '$this->__' . $name_value . ' = $query[\'' . $name_value . "'];\n";
+
+					//$find_array = $find_one . "\t\t\t" . '$this->__' . $name_value . ' = $query[\'' . $name_value . "'];\n";
+					/*
+					else if ($num > 1) {
+			$this->__id = [];
+			$this->__nombre = [];
+			print_r($this->__id);
+			for ($i=0; $i < $num; $i++) { 
+				$this->__id[] = $query[$i]['id'];
+				$this->__nombres[] = $query[$i]['nombres'];
+			}
+			
+			print_r($this->__id);
+		}
+					*/
 					/*foreach($property as $name_property=>$value_final) {
 
 						// - $value = $value . '\'' . $name_property . '\' => \'' . $value_final . '\', ';
 						//$map = $map . '\'' . $name_property . '\' => \'' . $value_final . '\', ';
 					}*/
 				}
+				$save = trim($save, " . \"', \" . ");
+				$save = $save . " . \"');\");" . "\n\t}\n";
 				$value = trim($value, ', ');
-				//$map = $map . $value . '], ';
+				$find = $find . $find_one . "\t\t" . '}' . "\n";
+				$find = $find . "\n\t}\n";
 			}
 		}
-		$var = $var . $map;
-		$var = trim($var, ', ');
-		$var = $var . '], $num_entities = ' . $num_values . ';';
+		$var = $var/* . $map*/;
+		$var = trim($var, '. ');
+		//$var = $var . '], $num_entities = ' . $num_values . ';';
+		$var = $var . ' $num_entities = ' . $num_values . ';';
+		$activerecord = $save . $delete . /*$select . */$find;
 		// file_exists()
 		chdir(__DIR__ . '/../../../');
-		if (is_dir('app/models'))
-			chdir('app/models');
+		if (is_dir('app/'))
+			chdir('app/');
 		else {
-			mkdir('app/models');
-			chdir('app/models');
+			mkdir('app/');
+			chdir('app/');
+		}
+
+		if (is_dir('models/'))
+			chdir('models/');
+		else {
+			mkdir('models/');
+			chdir('models/');
 		}
 
 		if (file_exists($name_entities . '.php'))
 			unlink($name_entities . '.php');
 		$file_read = fopen($name_entities . '.php', 'c');
-		fwrite($file_read, $start . $var . "\n}");
+		fwrite($file_read, $start . $activerecord . $function . $var . "\n}");
 		
 		array_push(Self::$models, 'app/models/' . $name_entities . '.php');
 	}
@@ -58,7 +122,11 @@ class Factory {
 		$db = Yaml::read($db);
 		foreach ($db as $name_database => $property) {
 			echo 'database ' . $name_database . ' has been created' . "\n";
-			$file = Self::php_start() . ucwords($name_database) . " extends \Choco\ActiveRecord {\n";
+			$file = Self::php_start() . ucwords($name_database) . "/* implements \Choco\ActiveRecord */{\n";
+
+
+			$file = $file . Self::php_database_construct();
+
 			if (isset($property['driver']) && isset($property['host']) && isset($property['user'])) {
 				$file = $file . "\tprotected ";
 				foreach ($property as $key => $value) {
@@ -67,15 +135,33 @@ class Factory {
 			}
 			else
 				continue;
+			$file = $file . '$conn = NULL, ';
 			$file = trim($file, ', ');
 			$file = $file . ";\n}";
 
 			chdir(__DIR__ . '/../../../');
-			if (is_dir('app/models/db'))
-				chdir('app/models/db');
+
+
+			if (is_dir('app/'))
+				chdir('app/');
 			else {
-				mkdir('app/models/db');
-				chdir('app/models/db');
+				mkdir('app/');
+				chdir('app/');
+			}
+
+			if (is_dir('models/'))
+				chdir('models/');
+			else {
+				mkdir('models/');
+				chdir('models/');
+			}
+
+
+			if (is_dir('db/'))
+				chdir('db/');
+			else {
+				mkdir('db');
+				chdir('db');
 			}
 
 			if (file_exists($name_database . '.php'))
@@ -232,6 +318,29 @@ class Factory {
  */
 
 class ';
+	}
+
+	private static function php_database_construct() {
+		return 
+'	function __construct() {
+		try {
+			$this->conn = new PDO($this->driver . \':host=\' . $this->host . \';dbname=\' . $this->db . \';charset=utf8mb4\', $this->user, $this->pass);
+			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		} catch (PDOException $e) {
+			print \'Connection error: \' . $e->getMessage() . \'<br/>\';
+			die();
+		}
+	}
+
+	protected function query($query) {
+		try {
+			return $this->conn->query($query);
+		} catch (PDOException $e) {
+			print \'Query error: \' . $e->getMessage() . \'<br/>\';
+			die();
+		}
+	}' . "\n";
 	}
 	private static $models = [];
 }

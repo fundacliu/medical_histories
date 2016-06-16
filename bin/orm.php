@@ -96,4 +96,3 @@ class Terminal {
 }
 
 Terminal::start($argv);
-echo "\n";
