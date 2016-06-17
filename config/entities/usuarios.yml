@@ -1,0 +1,17 @@
+medical_histories:
+    usuarios:
+        usuario: 
+            type: varchar
+            size: 50
+            required: true
+        contraseña: 
+            type: varchar
+            size: 50
+            required: true
+        correo: 
+            type: varchar
+            size: 50
+            required: true
+        creacion: 
+            type: date
+            required: true
