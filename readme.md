@@ -35,7 +35,7 @@ composer install
 ```bash
 PATH=$PATH:/srv/http/bin
 ```
-* [En Windows](http://aprenderaprogramar.com/index.php?option=com_content&view=article&id=389:configurar-java-en-windows-variables-de-entorno-javahome-y-path-cu00610b&catid=68:curso-aprender-programacion-java-desde-cero&Itemid=188) consulte este tutorial
+* En Windows consulte este [tutorial](http://aprenderaprogramar.com/index.php?option=com_content&view=article&id=389:configurar-java-en-windows-variables-de-entorno-javahome-y-path-cu00610b&catid=68:curso-aprender-programacion-java-desde-cero&Itemid=188)
 
 ## Ahora es hora de generar nuestras entidades en la base de datos
 
