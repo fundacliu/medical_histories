@@ -2,10 +2,10 @@
 <section class="content-section text-center">
     <div class="download-section">
         <div class="container" id="download">
-            <div class="col-lg-8 col-lg-offset-2">
+            <form action="base" method="POST" class="col-lg-8 col-lg-offset-2">
                 <h2 class="TituloGeneral Laila Completo">Busqueda</h2>
-				<input class="Barra" type="text" name="Cedula" placeholder="Ingrese Identificador">
-                <a href="#" class="btn btn-default btn-lg">Buscar</a>
+				<input class="Barra" type="text" name="cedula" placeholder="Ingrese Identificador">
+                <input type="submit" class="btn btn-default btn-lg" value="Buscar">
             </div>
         </div>
     </div>

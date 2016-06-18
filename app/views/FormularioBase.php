@@ -3,6 +3,7 @@
     <div class="col-12">
         <div class="row">        
             <form onsubmit="return false">
+            
                 <div class="col-1">
                     <label>
                         Departamento
@@ -12,54 +13,58 @@
                 <div class="col-2">  
                     <label>
                         Apellidos
-                        <input placeholder="Apellidos" id="apellido" name="apellido" tabindex="2">
+                        <input placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" name="apellido" tabindex="2" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Fecha
-                        <input type="date" placeholder="Fecha" id="fecha" name="fecha" tabindex="3">
+                        <input type="text" placeholder="<?php echo date('d/m/Y') ?>;  " id="fecha" name="fecha" tabindex="3" disabled>
                     </label>
                 </div>
                 <div class="col-2">    
                     <label>
                         Nombres
-                        <input placeholder="Nombres" id="nombres" name="nombres" tabindex="4">
+                        <input placeholder="<?php echo $persona->nombres(); ?>" id="nombres" name="nombres" tabindex="4" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Hora
-                        <input type="text" placeholder="Hora" id="hora" name="hora" tabindex="5">
+                        <input type="text" placeholder="<?php echo date('h:i:s A'); ?>" id="hora" name="hora" tabindex="5">
                     </label>
                 </div>
                 <div class="col-3">      
                     <label>Sexo</label>
-                    <center class="check"><input type="checkbox" class="js-switch" tabindex="6"></center>
+                    <center class="check">
+                        <select disabled>
+                            <option></option>
+                        </select>
+                    <input type="checkbox" class="js-switch" tabindex="6"></center>
                 </div>
                 <div class="col-3">  
                     <label>
                         Lugar y Fecha de Nacimiento
-                        <input placeholder="Lugar y Fecha de Nacimiento" id="lugarFecha" name="lugarFecha" tabindex="7">
+                        <input placeholder="Lugar y Fecha de Nacimiento" id="lugarFecha" name="lugarFecha" tabindex="7" disabled>
                     </label>
                 </div>
                 <div class="col-3">
                     <label>
                         Edad
-                        <input placeholder="Edad" id="edad" name="edad" tabindex="8">
+                        <input placeholder="<?php echo $edad; ?>" id="edad" name="edad" tabindex="8" disabled>
                     </label>
                 </div>
 
                <div class="col-3">  
                     <label>
                         Ubicacion
-                        <input placeholder="Ubicacion" id="ubicacion" name="ubicacion" tabindex="9">
+                        <input placeholder="Ubicacion" id="ubicacion" name="ubicacion" tabindex="9" disabled>
                     </label>
                 </div>
                 <div class="col-3">  
                     <label>
                         Numero de Historia
-                        <input placeholder="Numero de Historia" id="historia" name="historia" tabindex="10">
+                        <input placeholder="Numero de Historia" id="historia" name="historia" tabindex="10" >
                     </label>
                 </div>
                 <div class="col-3">
@@ -72,19 +77,19 @@
                 <div class="col-2">
                     <label>
                         Cedula de Identidad
-                        <input placeholder="Cedula de Identidad Nº:" id="cedula" name="cedula" tabindex="12">
+                        <input placeholder="<?php echo $persona->apellidos(); ?>" id="cedula" name="cedula" tabindex="12" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Procedencia
-                        <input placeholder="Procedencia" id="procedencia" name="procedencia" tabindex="13">
+                        <input placeholder="Procedencia" id="procedencia" name="procedencia" tabindex="13" disabled>
                     </label>
                 </div>
                 <div class="col-1">
                     <label>
                         Direccion Actual
-                        <input placeholder="Direccion Actual" id="direccion" name="direccion" tabindex="14">
+                        <input placeholder="<?php echo $persona->direccion(); ?>" id="direccion" name="direccion" tabindex="14" disabled>
                     </label>
                 </div>
                 <div class="col-submit">

@@ -27,11 +27,37 @@ Flight::route('/', function(){
     Flight::render('index', []); 
 });
 Flight::route('/base', function(){
+	$persona = new Personas();
+    if (POST::exist(["cedula"])) {
+        $persona = new Personas();
+        $persona->find('cedula = ' . POST::get('cedula'));
+        Flight::view()->set('persona', $persona);
+
+
+		$dia=date('j'); 
+		$mes=date('n'); 
+		$ano=date('Y'); 
+
+		$nacimiento=explode("-", $persona->nacimiento()); 
+		$dianac=$nacimiento[2]; 
+		$mesnac=$nacimiento[1]; 
+		$anonac=$nacimiento[0]; 
+		//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual 
+		if (($mesnac == $mes) && ($dianac > $dia)){ 
+		$ano=($ano-1);} 
+		//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual 
+		if ($mesnac > $mes){ 
+		$ano=($ano-1);} 
+		//ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad 
+		$edad=($ano-$anonac);
+		Flight::view()->set('edad', $edad);		
+
+    } 
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('FormularioBase', [], 'FormularioBase');
 	Flight::render('headForm', [], 'headForm');
-	Flight::render('base', []);
+	Flight::render('base');
 });
 Flight::route('/Login', function(){
 	Flight::render('head', [], 'head');
@@ -113,8 +139,6 @@ Flight::route('/accion/registro', function(){
 });
 
 Flight::route('/accion/persona', function(){
-	var_dump($_POST);
-	var_dump(POST::exist(["nombres", "apellidos", "tipo_cedula", "cedula", "nacimiento", "direccion", "profesion", "sexo", "donde_nacio"]));
 	if (POST::exist(["nombres", "apellidos", "tipo_cedula", "cedula", "nacimiento", "direccion", "profesion", "sexo", "donde_nacio"])) {
 		$persona = new Personas();
 		$persona->nombres(POST::get("nombres"));
@@ -129,7 +153,6 @@ Flight::route('/accion/persona', function(){
 		$persona->registro(date("Y-m-d H:i:s"));
 		$persona->save();
 		echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
-
 	} 
 	else {
 		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
