@@ -1,6 +1,6 @@
-## Sistema de historias medicas para el Fundacliu
+## Sistema de historias médicas para el Fundacliu
 
-Este sistema fue creado bajo la tarea de llevar un control automatico de las historias medicas, y llevar a cabo una gestion mas rapida y eficiente
+Este sistema fue creado bajo la tarea de llevar un control automatico de las historias medicas, y llevar a cabo una gestión mas rápida y eficiente
 
 ## Descargar
 
@@ -13,7 +13,7 @@ si usted es un usuario poco experimentado les recomendamos instalar el siguiente
 
 ## Instalación 
 
-para la instalacion de el sistema de historias medicas se requiere tener el modulo descomentado "rewrite_module" y ademas agregar el directorio a usar permiso de sobrescritura  "AllowOverride all" en su httpd.conf, y ademas en su php.ini activar el driver pdo a usar para que Choco ORM pueda funcionar, actualmente es el driver de mysql
+para la instalacion de el sistema de historias médicas se requiere tener el modulo descomentado "rewrite_module" y además agregar el directorio a usar permiso de sobrescritura  "AllowOverride all" en su httpd.conf, y además en su php.ini activar el driver PDO a usar para que Choco ORM pueda funcionar, actualmente es el driver de MySQL
 
 por otra parte los directorios que apache escucha varian segun el sistema operativo o el stack instalado, estos son los directorias basicos
 
@@ -30,12 +30,12 @@ composer install
 
 ## Debe agregar Choco ORM al PATH
 
-* En linux
+* En Linux
 
 ```bash
 PATH=$PATH:/srv/http/bin
 ```
-* (en windows)[http://aprenderaprogramar.com/index.php?option=com_content&view=article&id=389:configurar-java-en-windows-variables-de-entorno-javahome-y-path-cu00610b&catid=68:curso-aprender-programacion-java-desde-cero&Itemid=188] consulte este tutorial
+* [En Windows](http://aprenderaprogramar.com/index.php?option=com_content&view=article&id=389:configurar-java-en-windows-variables-de-entorno-javahome-y-path-cu00610b&catid=68:curso-aprender-programacion-java-desde-cero&Itemid=188) consulte este tutorial
 
 ## Ahora es hora de generar nuestras entidades en la base de datos
 
@@ -46,8 +46,15 @@ orm model
 orm insert
 ```
 
+## Desde ahora usted puede ejecutar el proyecto
+
+Usted debe ejecutar apache según sea su sistema operativo y su instalación el procedimiento varia
+
+## Framework
+
+* [Flight](http://expressjs.com/) - Un micro-framework extensible para PHP
+
 ## Bibliotecas
 
-* [express](http://expressjs.com/) - Infraestructura web rápida, minimalista y flexible para Node.js
-* [Twig.js](https://github.com/justjohn/twig.js/wiki) -  una implementación del lenguaje de plantillas Twig en JavaScript
-* [node-mysql](https://github.com/felixge/node-mysql) - Una inplementación pura del cliente que implementa el protocolo MySQL en Node.js
+* Choco ORM - Un ORM orientado a la autogeneracion de código y al patrón Active Record
+* Choco POST - un pequeño modulo orientado a reducir las validaciones recibida por el método POST
