@@ -1,0 +1,11 @@
+medical_histories:
+    permisos:
+        permiso: 
+            type: varchar
+            size: 7
+            required: true
+            fill:
+                - usuario
+                - doctor
+                - admin
+                - externo

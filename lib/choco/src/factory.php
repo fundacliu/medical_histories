@@ -210,7 +210,7 @@ class Factory {
 				}
 			}
 			try {
-				$db = new PDO($driver . ':host=' . $host . ';dbname=' . $name_database . ';', $user, $pass);
+				$db = new PDO($driver . ':host=' . $host . ';', $user, $pass);
 				echo 'Connected to database ' . $name_database . "\n";
 			} catch(PDOException $e) {
 				echo $e->getMessage();
@@ -230,9 +230,15 @@ class Factory {
 		$num_iterator = 0;
 		$fk = '';
 		
+		//$delete_db = '';
+		//$create_db = '';
+		
 		for ($i = 2; $i < $num; $i++) { 
 			$entities = Yaml::read($path . $filenames[$i]);
 			foreach ($entities as $name_database => $property) {
+				//$delete_db = 'DROP DATABASE IF NOT EXISTS' . $name_database . ";\n";
+				//$create_db = 'CREATE DATABASE ' . $name_database . ";\n";
+				
 				foreach ($property as $name_entities => $value) {
 					$sql = $sql . 'CREATE TABLE ' . $name_database . '.' . $name_entities . ' (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, ';
 					$delete = $delete . 'DROP TABLE IF EXISTS '. $name_database . '.' . $name_entities . ';';
@@ -297,11 +303,13 @@ class Factory {
 					$sql = '';
 					$delete = '';
 					$num_iterator = 0;
+					var_dump($insert);
+					$insert = [];
 				}
 			}
 		}
 		try {
-			//var_dump($fk . $fill);
+			var_dump($fk . $fill);
 			$db->query($fk . $fill);
 			echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 		} catch(PDOException $e) {

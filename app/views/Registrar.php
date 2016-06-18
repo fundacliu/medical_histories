@@ -4,22 +4,26 @@
 		<div class="register-logo">
 			<a href="#"><b></b>REGISTRATE</a>
 		</div>
-			<form action="#" method="post">
+			<form action="/accion/registro" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
-					<input type="text" class="form-control" placeholder="Nombre" name="name" value=""/>
+					<input type="text" class="form-control" placeholder="Nick" name="nombres" value=""/>
 					<span class="glyphicon glyphicon-user form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="email" class="form-control" placeholder="Email" name="email" value=""/>
+					<input type="email" class="form-control" placeholder="Email" name="correo" value=""/>
 					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" placeholder="Password" name="password"/>
+					<input type="text" class="form-control" placeholder="cedula" name="cedula" value=""/>
+					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+				</div>
+				<div class="form-group has-feedback">
+					<input type="password" class="form-control" placeholder="Password" name="pass"/>
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" placeholder="Repetir password" name="password_confirmation"/>
+					<input type="password" class="form-control" placeholder="Repetir password" name="pass2"/>
 					<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 				</div>
 				<div class="row MarginArriba">
