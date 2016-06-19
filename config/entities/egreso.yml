@@ -1,0 +1,10 @@
+medical_histories:
+    egreso:
+        id_persona: 
+          type: int
+          join: personas
+          required: true
+        descripcion: 
+          type: int
+          join: personas
+          required: true

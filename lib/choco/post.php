@@ -27,9 +27,6 @@ Class POST {
 		//echo "$num $exist \n";
 		return $num == $exist;
 	}
-	public static function show() {
-		print_r(Self::$post);
-	}
 	public static function get($var = NULL) {
 		if ($var != NULL) {
 			if (Self::exist([$var]))

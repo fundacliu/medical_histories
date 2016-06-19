@@ -13,45 +13,46 @@
                 <div class="col-2">  
                     <label>
                         Apellidos
-                        <input placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" name="apellido" tabindex="2" disabled>
+                        <input placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" tabindex="2" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Fecha
-                        <input type="text" placeholder="<?php echo date('d/m/Y') ?>;  " id="fecha" name="fecha" tabindex="3" disabled>
+                        <input type="text" placeholder="<?php echo date('d/m/Y') ?>;" id="fecha" tabindex="3" disabled>
                     </label>
                 </div>
                 <div class="col-2">    
                     <label>
                         Nombres
-                        <input placeholder="<?php echo $persona->nombres(); ?>" id="nombres" name="nombres" tabindex="4" disabled>
+                        <input placeholder="<?php echo $persona->nombres(); ?>" id="nombres" tabindex="4" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Hora
-                        <input type="text" placeholder="<?php echo date('h:i:s A'); ?>" id="hora" name="hora" tabindex="5">
+                        <input type="text" placeholder="<?php echo date('h:i:s A'); ?>" id="hora" tabindex="5" disabled>
                     </label>
                 </div>
                 <div class="col-3">      
-                    <label>Sexo</label>
-                    <center class="check">
-                        <select disabled>
-                            <option></option>
+                    <label>
+                        Sexo
+                        <select tabindex="6" disabled>
+                            <option>Masculino</option>
+                            <option>Fenenino</option>
                         </select>
-                    <input type="checkbox" class="js-switch" tabindex="6"></center>
+                    </label>
                 </div>
                 <div class="col-3">  
                     <label>
-                        Lugar y Fecha de Nacimiento
-                        <input placeholder="Lugar y Fecha de Nacimiento" id="lugarFecha" name="lugarFecha" tabindex="7" disabled>
+                        Lugar de nacimiento
+                        <input placeholder="<?php echo $persona->Lugar_nacimiento(); ?>" id="lugarFecha" name="lugarFecha" tabindex="7" disabled>
                     </label>
                 </div>
                 <div class="col-3">
                     <label>
                         Edad
-                        <input placeholder="<?php echo $edad; ?>" id="edad" name="edad" tabindex="8" disabled>
+                        <input placeholder="<?php echo $edad;?>" id="edad" tabindex="8" disabled>
                     </label>
                 </div>
 
