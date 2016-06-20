@@ -13,53 +13,78 @@ use \Choco\Session;
 
 Flight::set('flight.views.path', VIEWS);
 
+if (Session::exist(['permiso'])) 
+	Flight::view()->set('permiso', Session::get('permiso'));
+else 
+	Flight::view()->set('permiso', 'invitado');
+
 Flight::route('/', function(){
 	if (Session::exist(['permiso'])) 
 		Flight::view()->set('permiso', Session::get('permiso'));
 	else 
-		Flight::view()->set('permiso', 'invitado');
+		Flight::view()->set('permiso', 'invitado');	
 
 	Flight::render('head', [], 'head');
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('script', [], 'script');
 	Flight::render('header', [], 'header');
-	Flight::render('modulos', [], 'modulos');
 	Flight::render('busqueda', [], 'busqueda');
     Flight::render('index', []); 
 });
-Flight::route('/base', function(){
+
+function base($cedula) {
+	/*if (Session::exist(['permiso'])) 
+		Flight::view()->set('permiso', Session::get('permiso'));
+	else 
+		Flight::view()->set('permiso', 'invitado');*/
 	$persona = new Personas();
-    if (POST::exist(["cedula"])) {
+    if (POST::exist(["cedula"]) || isset($cedula)) {
         $persona = new Personas();
-        $persona->find('cedula = ' . POST::get('cedula'));
-        Flight::view()->set('persona', $persona);
+        if (POST::exist(["cedula"]))
+        	$persona->find('cedula = ' . POST::get('cedula'));
+        else
+        	$persona->find('cedula = ' . $cedula);
+        if ($persona->id() != '') {
+	        Flight::view()->set('persona', $persona);
 
 
-		$dia=date('j'); 
-		$mes=date('n'); 
-		$ano=date('Y'); 
+			$dia=date('j'); 
+			$mes=date('n'); 
+			$ano=date('Y'); 
 
-		$nacimiento=explode("-", $persona->nacimiento()); 
-		$dianac=$nacimiento[2]; 
-		$mesnac=$nacimiento[1]; 
-		$anonac=$nacimiento[0]; 
-		//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual 
-		if (($mesnac == $mes) && ($dianac > $dia)){ 
-		$ano=($ano-1);} 
-		//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual 
-		if ($mesnac > $mes){ 
-		$ano=($ano-1);} 
-		//ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad 
-		$edad=($ano-$anonac);
-		Flight::view()->set('edad', $edad);		
-
+			$nacimiento=explode("-", $persona->nacimiento()); 
+			$dianac=$nacimiento[2]; 
+			$mesnac=$nacimiento[1]; 
+			$anonac=$nacimiento[0]; 
+			//si el mes es el mismo pero el día inferior aun no ha cumplido años, le quitaremos un año al actual 
+			if (($mesnac == $mes) && ($dianac > $dia)){ 
+			$ano=($ano-1);} 
+			//si el mes es superior al actual tampoco habrá cumplido años, por eso le quitamos un año al actual 
+			if ($mesnac > $mes){ 
+			$ano=($ano-1);} 
+			//ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad 
+			$edad=($ano-$anonac);
+			Flight::view()->set('edad', $edad);
+			Flight::render('headBase', [], 'headBase');
+			Flight::render('menuSuperior', [], 'menuSuperior');
+			Flight::render('FormularioBase', [], 'FormularioBase');
+			Flight::render('headForm', [], 'headForm');
+			Flight::render('base');
+		}
+		else if (isset($cedula)) {
+			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
+		}
+		else 
+    		echo '<script language=Javascript> location.pathname = location.pathname + \'/../personas\'; </script>'; 
     } 
-	Flight::render('headBase', [], 'headBase');
-	Flight::render('menuSuperior', [], 'menuSuperior');
-	Flight::render('FormularioBase', [], 'FormularioBase');
-	Flight::render('headForm', [], 'headForm');
-	Flight::render('base');
-});
+    else if (isset($cedula)) 
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
+    else 
+    	echo '<script language=Javascript> location.pathname = location.pathname + \'/../personas\'; </script>'; 
+}
+
+Flight::route('/base(/@cedula:[0-9]{7})', 'base');
+Flight::route('/base(/@cedula:[0-9]{8})', 'base');
 Flight::route('/Login', function(){
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
@@ -116,11 +141,8 @@ Flight::route('/evolucion', function(){
 	Flight::render('evolucion', []);
 });
 
+
 Flight::route('/historia', function(){
-	if (Session::exist(['permiso'])) 
-		Flight::view()->set('permiso', Session::get('permiso'));
-	else 
-		Flight::view()->set('permiso', 'invitado');
 	Flight::render('head', [], 'head');
 	Flight::render('header', [], 'header');
 	Flight::render('moduloHistoria', [], 'moduloHistoria');
@@ -153,7 +175,7 @@ Flight::route('/accion/registro', function(){
 			$usuario->usuario(POST::get('nombres'));
 			$usuario->contraseña(POST::get('pass'));
 			$usuario->correo(POST::get('correo'));
-			$usuario->id_personas($persona->id());
+			$usuario->id_persona($persona->id());
 			$usuario->creacion(date('Y-m-d H:i:s'));
 			$usuario->save();
 			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
@@ -173,7 +195,7 @@ Flight::route('/accion/registro', function(){
 Flight::route('/accion/login', function(){
 	if (POST::exist(["nick", "password"])) {
 		$usuario = new Usuarios();
-		$usuario->find('usuario = ' . POST::get("nick") . ' and contraseña = ' . POST::get("password"));
+		$usuario->find('usuario = \'' . POST::get("nick") . '\' and contraseña = \'' . POST::get("password") . '\'');
 		if ($usuario->id() != '') {
 			
 			$persona = new Personas();
@@ -213,7 +235,7 @@ Flight::route('/accion/persona', function(){
 		$persona->registro(date("Y-m-d H:i:s"));
 		$persona->id_permiso(1);
 		$persona->save();
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../base/' . POST::get("cedula") . '\'; </script>'; 
 	} 
 	else {
 		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
@@ -225,6 +247,9 @@ Flight::route('/personas', function(){
 	Flight::render('script', [], 'script');
 	Flight::render('personas', []);
 });
-
+Flight::route('/accion/cerrar', function(){
+	Session::close();
+	echo '<script language=Javascript> location.pathname = location.pathname + \'/../../\'; </script>'; 
+});
 
 Flight::start();

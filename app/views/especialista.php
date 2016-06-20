@@ -8,7 +8,6 @@
 	<?php echo $menuSuperior; ?>
 	<?php echo $header; ?>
 	<?php echo $moduloEspecialista; ?>
-	<?php echo $busqueda; ?>
 	<?php echo $script; ?>
 </body>
 </html>
