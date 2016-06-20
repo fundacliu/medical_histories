@@ -1,3 +1,6 @@
+<?php
+if ($permiso == 'invitado') {
+?>
 <!-- Header -->
 <header class="intro ColorLetraEnca">
     <div class="intro-body">
@@ -14,3 +17,6 @@
         </div>
     </div>
 </header>
+<?php
+}
+?>

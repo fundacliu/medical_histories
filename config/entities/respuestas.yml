@@ -5,5 +5,5 @@ medical_histories:
             size: 2
             required: true
             fill: 
-              - si
-              - no
+                - si
+                - no

@@ -1,23 +1,26 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'lib/choco/session.php';
 require_once 'lib/choco/orm.php';
 require_once 'lib/choco/post.php';
 require_once 'config/autoloader.php';
-use \Choco\POST;
-
-
-$a = new Personas();
-$a->find("nombres='jeferson'");
-echo $a->id() . " " . $a->nombres() . " ";
-
 define('APP', './app/');
 define('VIEWS', APP . 'views');
 define('MODELS', APP . 'models');
 define('CONTROLLERS', APP . 'controllers');
+use \Choco\POST;
+use \Choco\Session;
 
 Flight::set('flight.views.path', VIEWS);
 
 Flight::route('/', function(){
+
+	
+	if (Session::exist(['permiso'])) 
+		Flight::view()->set('permiso', Session::get('permiso'));
+	else 
+		Flight::view()->set('permiso', 'invitado');
+
 	Flight::render('head', [], 'head');
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('script', [], 'script');
@@ -130,11 +133,42 @@ Flight::route('/accion/registro', function(){
 			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
 		}
 		else {
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Registrar\'; </script>'; 
-	}
+			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Registrar\'; </script>'; 
+		}
 	}
 	else {
 		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Registrar\'; </script>'; 
+	}
+});
+
+
+
+
+Flight::route('/accion/login', function(){
+	if (POST::exist(["nick", "password"])) {
+		$usuario = new Usuarios();
+		$usuario->find('usuario = ' . POST::get("nick") . ' and contraseña = ' . POST::get("password"));
+		if ($usuario->id() != '') {
+			
+			$persona = new Personas();
+			$persona->find('id = ' . $usuario->id_persona());
+			Session::new([
+				"usuario" => $usuario->usuario(),
+				"nombres" => $persona->nombres(),
+				"apellidos" => $persona->apellidos(),
+				"nacimiento" => $persona->nacimiento(),
+				"creacion" => $usuario->creacion(),
+				"permiso" => $persona->id_permiso()
+			]);
+
+			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
+		}
+		else {
+			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Login\'; </script>'; 
+		}
+	}
+	else {
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Login\'; </script>'; 
 	}
 });
 
@@ -151,6 +185,7 @@ Flight::route('/accion/persona', function(){
 		$persona->id_sexo(POST::get("sexo"));
 		$persona->Lugar_nacimiento(POST::get("donde_nacio"));
 		$persona->registro(date("Y-m-d H:i:s"));
+		$persona->id_permiso(1);
 		$persona->save();
 		echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
 	} 

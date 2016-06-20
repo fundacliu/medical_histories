@@ -1,0 +1,10 @@
+medical_histories:
+    departamentos:
+        departamento: 
+            type: varchar
+            size: 50
+            required: true
+            fill:
+                - example1
+                - example2
+                - example3

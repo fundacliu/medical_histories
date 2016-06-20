@@ -1,6 +1,5 @@
 medical_histories:
-  driver: mysql
-  host: localhost
-  user: root
-  pass: 
-
+    driver: mysql
+    host: localhost
+    user: root
+    pass: 

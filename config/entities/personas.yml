@@ -37,3 +37,7 @@ medical_histories:
             type: int
             join: tipo_cedula
             required: true
+        id_permiso: 
+            type: int
+            join: permisos
+            required: true

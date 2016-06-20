@@ -1,10 +1,16 @@
 medical_histories:
     egreso:
         id_persona: 
-          type: int
-          join: personas
-          required: true
+            type: int
+            join: personas
+            required: true
+        id_departamento: 
+            type: int
+            join: departamentos
+            required: true
         descripcion: 
-          type: int
-          join: personas
-          required: true
+            type: text
+            required: true
+        creacion: 
+            type: date
+            required: true

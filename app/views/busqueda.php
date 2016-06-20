@@ -1,3 +1,6 @@
+<?php
+if ($permiso != 'invitado') {
+?>
 <!-- Busqueda -->
 <section class="content-section text-center">
     <div class="download-section">
@@ -10,3 +13,6 @@
         </div>
     </div>
 </section>
+<?php
+}
+?>

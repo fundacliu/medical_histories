@@ -18,6 +18,7 @@ class Factory {
 		//$select = '';
 		$find_one = '';
 		$find_array = '';
+		$name_entities = '';
 		foreach($model as $db=>$entities) {
 			$var = $var . '$db = \'' . $db . '\', ';
 			foreach($entities as $name_entities=>$values) {
@@ -303,13 +304,13 @@ class Factory {
 					$sql = '';
 					$delete = '';
 					$num_iterator = 0;
-					var_dump($insert);
+					//var_dump($insert);
 					$insert = [];
 				}
 			}
 		}
 		try {
-			var_dump($fk . $fill);
+			//var_dump($fk . $fill);
 			$db->query($fk . $fill);
 			echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 		} catch(PDOException $e) {

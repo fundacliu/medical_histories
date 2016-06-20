@@ -15,7 +15,7 @@ medical_histories:
         creacion: 
             type: date
             required: true
-        id_personas: 
+        id_persona: 
             type: int
             join: personas
             required: true

@@ -1,5 +1,5 @@
 medical_histories:
-    ingreso:
+    laboratorio:
         id_persona: 
             type: int
             join: personas
@@ -11,13 +11,14 @@ medical_histories:
         descripcion: 
             type: text
             required: true
-        es_emergencia:
-            type: int
-            join: respuestas
+        orina: 
+            type: text
             required: true
-        es_externa:
-            type: int
-            join: respuestas
+        hematologia: 
+            type: text
+            required: true
+        heces: 
+            type: text
             required: true
         creacion: 
             type: date

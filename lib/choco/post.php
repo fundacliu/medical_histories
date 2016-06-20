@@ -1,9 +1,5 @@
 <?php
 namespace Choco;
-require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/src/yaml.php';
-require_once __DIR__ . '/src/activerecord.php';
-require_once __DIR__ . '/src/factory.php';
 
 Class POST {
 	public static function start($var = []) {

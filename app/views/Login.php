@@ -1,14 +1,13 @@
 	<?php echo $head; ?>
 	<body class="fondo">
-
 		<div class="login-box-body fondo">
 			<div class="login-logo">
 				<a href="#"><b></b>INICIAR SESION</a>
 			</div><!-- /.login-logo -->
-			<form action="#" method="post">
+			<form action="/accion/login" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
-					<input type="email" class="form-control" placeholder="Email" name="email"/>
+					<input type="text" class="form-control" placeholder="Usuario" name="nick"/>
 					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">

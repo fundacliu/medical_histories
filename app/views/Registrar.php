@@ -7,7 +7,7 @@
 			<form action="/accion/registro" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
-					<input type="text" class="form-control" placeholder="Nick" name="nombres" value=""/>
+					<input type="text" class="form-control" placeholder="Usuario" name="nombres" value=""/>
 					<span class="glyphicon glyphicon-user form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
