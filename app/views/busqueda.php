@@ -1,5 +1,5 @@
 <?php
-if ($permiso != 'invitado') {
+if ($permiso == 'invitado') {
 ?>
 <!-- Busqueda -->
 <section class="content-section text-center">
@@ -9,7 +9,7 @@ if ($permiso != 'invitado') {
                 <h2 class="TituloGeneral Laila Completo">Busqueda</h2>
 				<input class="Barra" type="text" name="cedula" placeholder="Ingrese Identificador">
                 <input type="submit" class="btn btn-default btn-lg" value="Buscar">
-            </div>
+            </form>
         </div>
     </div>
 </section>

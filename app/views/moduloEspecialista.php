@@ -6,11 +6,6 @@
             <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-          <!--              <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2 (7).png" height="100" width="100" class="iconoModulo">
-                            </a>
-                        </div> -->
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Clinica - Parte 1</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -23,11 +18,6 @@
             <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-          <!--              <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2 (7).png" height="100" width="100" class="iconoModulo">
-                            </a>
-                        </div> -->
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Clinica - Parte 2</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -40,11 +30,6 @@
             <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-          <!--              <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2 (7).png" height="100" width="100" class="iconoModulo">
-                            </a>
-                        </div> -->
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Clinica - Parte 3</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -57,11 +42,6 @@
             <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2 (10).png" height="100" width="100" class="iconoModulo">
-                            </a>
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Ficha de Ingreso</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -74,11 +54,6 @@
             <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2 (11).png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Ficha de Egreso</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -88,14 +63,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-lg-offset-1">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2 (5).png" height="100" width="100" class="iconoModulo">
-                            </a>
-                        </div> -->
                         <div class="media-body">
                             <p class="ModuloEnca">Informe de Laboratorio</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -105,14 +75,9 @@
                     </div>
                 </div>
             </div>          
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Evolucion</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -122,14 +87,9 @@
                     </div>
                 </div>
             </div>           
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Evolucion de Enfermeria</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -139,14 +99,9 @@
                     </div>
                 </div>
             </div>         
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Orden Medica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -156,14 +111,9 @@
                     </div>
                 </div>
             </div>         
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Obstetrica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -173,14 +123,9 @@
                     </div>
                 </div>
             </div>         
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Aborto</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -190,14 +135,9 @@
                     </div>
                 </div>
             </div>         
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Hoja de Anestesia</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -207,14 +147,9 @@
                     </div>
                 </div>
             </div>         
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Intervencion Quirurgica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -224,14 +159,9 @@
                     </div>
                 </div>
             </div>        
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Trabajo y Parto</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -241,14 +171,9 @@
                     </div>
                 </div>
             </div>        
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Intervencion Quirurgica</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -258,14 +183,9 @@
                     </div>
                 </div>
             </div>        
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-4">
                 <div class="media Modulos">
                     <div class="icono">
-    <!--                     <div class="media-left">
-                            <a href="#">
-                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
-                            </a> 
-                        </div>-->
                         <div class="media-body">
                             <p class="ModuloEnca">Historia del Recien Nacido</p>
                             <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

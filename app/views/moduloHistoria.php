@@ -8,14 +8,4 @@
             </div>
         </div>
     </div>
-</section>               <!--  <div class="media">
-                    <div class="icono">
-                      <div class="media-left">
-                           <a href="#">
-                                <img src="public/medical_histories/img/atenci.jpg" height="400" width="400" class="iconoModulo">
-                            </a>
-                        </div>
-                        <div class="media-body">
-aqui boton
-                        </div>
-                        -->
+</section>

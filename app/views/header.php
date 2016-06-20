@@ -1,5 +1,5 @@
 <?php
-if ($permiso == 'invitado') {
+if ($permiso != 'invitado') {
 ?>
 <!-- Header -->
 <header class="intro ColorLetraEnca">

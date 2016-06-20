@@ -20,7 +20,7 @@
 						<option selected value="1">Venezolano</option>
 						<option value="2">Extranjero</option>
 					</select>
-					<span class="glyphicon glyphicon-user form-control-feedback"></span>
+					<span class="form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Cedula" name="cedula" value=""/>
@@ -47,7 +47,7 @@
 						<option selected value="1">Masculino</option>
 						<option value="2">Fenenino</option>
 					</select>
-					<span class="glyphicon glyphicon-user form-control-feedback"></span>
+					<span class="form-control-feedback"></span>
 				</div>
 				<div class="row MarginArriba">
 					<div class="col-xs-8">

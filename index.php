@@ -51,8 +51,7 @@ Flight::route('/base', function(){
 		$ano=($ano-1);} 
 		//ya no habría mas condiciones, ahora simplemente restamos los años y mostramos el resultado como su edad 
 		$edad=($ano-$anonac);
-		Flight::view()->set('edad', $edad);		
-
+		Flight::view()->set('edad', $edad);
     } 
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('menuSuperior', [], 'menuSuperior');
@@ -122,17 +121,17 @@ Flight::route('/historia', function(){
 	else 
 		Flight::view()->set('permiso', 'invitado');
 	Flight::render('head', [], 'head');
-	Flight::render('header', [], 'header');
-	Flight::render('moduloHistoria', [], 'moduloHistoria');
 	Flight::render('script', [], 'script');
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('busqueda', [], 'busqueda');	
 	Flight::render('historia', []);
 });
 Flight::route('/especialista', function(){
+	if (Session::exist(['permiso'])) 
+		Flight::view()->set('permiso', Session::get('permiso'));
+	else 
+		Flight::view()->set('permiso', 'invitado');
 	Flight::render('head', [], 'head');
-	Flight::render('header', [], 'header');
-	Flight::render('moduloEspecialista', [], 'moduloEspecialista');
 	Flight::render('script', [], 'script');
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('busqueda', [], 'busqueda');	
