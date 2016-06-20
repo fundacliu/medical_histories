@@ -252,7 +252,7 @@ class Factory {
 						if (isset($v['join']) && $v['join'] != ''){
 							$sql = $sql . 'UNSIGNED  ';
 							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD INDEX(' . $k . ');' . "\n";
-							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD CONSTRAINT fk_' . $k . ' ';
+							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD CONSTRAINT fk_' . $name_entities . '_' . $k . ' ';
 							$fk = $fk .'FOREIGN KEY (' . $k . ') REFERENCES ' . $name_database . '.' . $v['join'] .  ' (id); ' . "\n";
 						}
 						if (isset($v['required']) && $v['required'] == true) 
@@ -295,7 +295,7 @@ class Factory {
 						$fill = $fill . ";\n";
 					}
 					try {
-						//var_dump($delete . $sql);
+						var_dump($delete . $sql);
 						$db->query($delete . $sql);
 						echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 					} catch(PDOException $e) {
@@ -310,12 +310,129 @@ class Factory {
 			}
 		}
 		try {
-			//var_dump($fk . $fill);
+			var_dump($fk . $fill);
 			$db->query($fk . $fill);
 			echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 		} catch(PDOException $e) {
 			echo "error: " . $e->getMessage();
 		}
+	}
+	public static function gen_sql($config) {
+
+		// database
+		$path = $config . '/database/'; 
+		$filenames = scandir($path);
+		$num = count($filenames);
+		$db = '';
+		$driver = '';
+		$host = '';
+		$user = '';
+		$pass = '';
+		$out = '';
+		$name_database = '';
+		for ($i = 2; $i < $num; $i++) { 
+			$db = Yaml::read($path . $filenames[$i]);
+			foreach ($db as $name_database => $property) {
+				$$name_database = $name_database;
+				if (isset($property['driver']) && isset($property['host']) && isset($property['user'])) {
+					foreach ($property as $key => $value) {
+						$$key = $value;
+					}
+				}
+			}
+		}
+
+		// entities
+		$path = $config . '/entities/'; 
+		$filenames = scandir($path);
+		$num = count($filenames);
+		$sql = '';
+		$delete = '';
+		$fill = '';
+		$insert = [];
+		$num_iterator = 0;
+		$fk = '';
+		$delete_group = '';
+		$sql_group = '';
+		
+		//$delete_db = '';
+		//$create_db = '';
+		
+		for ($i = 2; $i < $num; $i++) { 
+			$entities = Yaml::read($path . $filenames[$i]);
+			foreach ($entities as $name_database => $property) {
+				//$delete_db = 'DROP DATABASE IF NOT EXISTS' . $name_database . ";\n";
+				//$create_db = 'CREATE DATABASE ' . $name_database . ";\n";
+				
+				foreach ($property as $name_entities => $value) {
+					$sql = $sql . 'CREATE TABLE ' . $name_database . '.' . $name_entities . ' (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, ';
+					$delete = $delete . 'DROP TABLE IF EXISTS '. $name_database . '.' . $name_entities . ";\n";
+					foreach ($value as $k => $v) {
+						$sql = $sql . $k . ' ';
+						if ($v['type'] == 'varchar')
+							$sql = $sql . $v['type'] . '(' . $v['size'] . ') ';
+						else
+							$sql = $sql . $v['type'] . ' ';
+						if (isset($v['join']) && $v['join'] != ''){
+							$sql = $sql . 'UNSIGNED  ';
+							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD INDEX(' . $k . ');' . "\n";
+							$fk = $fk .'ALTER TABLE ' . $name_database . '.' . $name_entities . ' ADD CONSTRAINT fk_' . $name_entities . '_' . $k . ' ';
+							$fk = $fk .'FOREIGN KEY (' . $k . ') REFERENCES ' . $name_database . '.' . $v['join'] .  ' (id); ' . "\n";
+						}
+						if (isset($v['required']) && $v['required'] == true) 
+							$sql = $sql . 'NOT NULL , ';
+						else
+							$sql = $sql . ' , ';
+
+						if (isset($v['fill'])) {
+							$insert[$num_iterator] = $v['fill'];
+							$num_iterator = $num_iterator + 1;
+						}
+
+						
+					}
+
+
+					$sql = trim($sql, ', ');
+					$sql = $sql . ");\n";
+					// insert default values
+					$num_iterator_for = count($insert);
+					if ($insert != [] && $num_iterator_for > 0) {
+						$num_iterator_for = count($insert[0]);
+					}
+					else
+						$num_iterator_for = 0;
+
+					if ($insert != [] && $num_iterator_for > 0) {
+						$num_iterator_for = count($insert[0]);
+						$num_keys = count($insert);
+						$fill = $fill . 'INSERT INTO '. $name_database . '.' . $name_entities . ' VALUES';
+						for ($j=0; $j < $num_iterator_for; $j++) { 
+							$fill = $fill . ' (null, ';
+							for ($k=0; $k < $num_keys; $k++) { 
+								$fill = $fill . '\'' . $insert[$k][$j] . '\'), ( ';
+							}
+							$fill = trim($fill, ', (');
+							$fill = $fill . ",";
+						}
+						$fill = trim($fill, ', (');
+						$fill = $fill . ";\n";
+					}
+					$sql_group = $sql_group . $sql;
+					$delete_group = $delete_group . $delete;
+					$sql = '';
+					$delete = '';
+					$num_iterator = 0;
+					//var_dump($insert);
+					$insert = [];
+				}
+			}
+		}
+		$out = $out . $delete_group . $sql_group;
+		$out = $out . $fk . $fill;
+
+		echo $out;
+			
 	}
 	private static function php_start() {
 		return 

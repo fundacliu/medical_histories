@@ -3,10 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 
-<link href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/public/grayscale/css/bootstrap.min.css" rel="stylesheet">
-<link href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/public/grayscale/css/styles.css" rel="stylesheet">
-<link href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/public/grayscale/css/switchery.min.css" rel="stylesheet">
-<link href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/public/grayscale/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo ROOT; ?>/public/grayscale/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo ROOT; ?>/public/grayscale/css/styles.css" rel="stylesheet">
+<link href="<?php echo ROOT; ?>/public/grayscale/css/switchery.min.css" rel="stylesheet">
+<link href="<?php echo ROOT; ?>/public/grayscale/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 

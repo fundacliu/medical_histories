@@ -15,6 +15,10 @@ class Terminal {
 					Self::insert();
 					break;
 
+				case 'sql':
+					Self::sql();
+					break;
+
 				case 'model':
 					Self::model();
 					break;
@@ -49,6 +53,16 @@ class Terminal {
 		}
 
 		Factory::sql(__DIR__ . '/../' . $models['config']);
+	}
+	private static function sql() {
+		if (is_file(__DIR__ . '/../choco.yml'))
+			$models = Yaml::read(__DIR__ . '/../choco.yml');
+		else {
+			$models['config'] = __DIR__ . '/config';
+			$models['models'] = __DIR__ . '/app/models';;
+		}
+
+		Factory::gen_sql(__DIR__ . '/../' . $models['config']);
 	}
 	private static function model() {
 		if (is_file(__DIR__ . '/../choco.yml'))
