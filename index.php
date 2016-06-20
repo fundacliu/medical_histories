@@ -115,6 +115,32 @@ Flight::route('/evolucion', function(){
 	Flight::render('evolucion', []);
 });
 
+Flight::route('/historia', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('header', [], 'header');
+	Flight::render('moduloHistoria', [], 'moduloHistoria');
+	Flight::render('script', [], 'script');
+	Flight::render('menuSuperior', [], 'menuSuperior');
+	Flight::render('modulos', [], 'modulos');
+	Flight::render('busqueda', [], 'busqueda');	
+	Flight::render('historia', []);
+});
+Flight::route('/especialista', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('header', [], 'header');
+	Flight::render('moduloEspecialista', [], 'moduloEspecialista');
+	Flight::render('script', [], 'script');
+	Flight::render('menuSuperior', [], 'menuSuperior');
+	Flight::render('modulos', [], 'modulos');
+	Flight::render('busqueda', [], 'busqueda');	
+	Flight::render('especialista', []);
+});
+
+
+
+
+
+
 Flight::route('/accion/registro', function(){
 	if (POST::exist(["cedula"])) {
 		$persona = new Personas();

@@ -7,5 +7,6 @@ medical_histories:
             fill:
                 - usuario
                 - doctor
-                - admin
+                - historias
+                - enfermera
                 - externo
