@@ -295,7 +295,7 @@ class Factory {
 						$fill = $fill . ";\n";
 					}
 					try {
-						var_dump($delete . $sql);
+						//var_dump($delete . $sql);
 						$db->query($delete . $sql);
 						echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 					} catch(PDOException $e) {
@@ -310,7 +310,7 @@ class Factory {
 			}
 		}
 		try {
-			var_dump($fk . $fill);
+			//var_dump($fk . $fill);
 			$db->query($fk . $fill);
 			echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 		} catch(PDOException $e) {
@@ -431,8 +431,13 @@ class Factory {
 		$out = $out . $delete_group . $sql_group;
 		$out = $out . $fk . $fill;
 
-		echo $out;
-			
+
+		chdir(__DIR__ . '/../../../');
+
+		if (file_exists('query.sql'))
+			unlink('query.sql');
+		$file_read = fopen('query.sql', 'c');
+		fwrite($file_read, $out);
 	}
 	private static function php_start() {
 		return 
