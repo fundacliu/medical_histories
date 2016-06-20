@@ -14,8 +14,6 @@ use \Choco\Session;
 Flight::set('flight.views.path', VIEWS);
 
 Flight::route('/', function(){
-
-	
 	if (Session::exist(['permiso'])) 
 		Flight::view()->set('permiso', Session::get('permiso'));
 	else 
@@ -119,12 +117,15 @@ Flight::route('/evolucion', function(){
 });
 
 Flight::route('/historia', function(){
+	if (Session::exist(['permiso'])) 
+		Flight::view()->set('permiso', Session::get('permiso'));
+	else 
+		Flight::view()->set('permiso', 'invitado');
 	Flight::render('head', [], 'head');
 	Flight::render('header', [], 'header');
 	Flight::render('moduloHistoria', [], 'moduloHistoria');
 	Flight::render('script', [], 'script');
 	Flight::render('menuSuperior', [], 'menuSuperior');
-	Flight::render('modulos', [], 'modulos');
 	Flight::render('busqueda', [], 'busqueda');	
 	Flight::render('historia', []);
 });
@@ -134,7 +135,6 @@ Flight::route('/especialista', function(){
 	Flight::render('moduloEspecialista', [], 'moduloEspecialista');
 	Flight::render('script', [], 'script');
 	Flight::render('menuSuperior', [], 'menuSuperior');
-	Flight::render('modulos', [], 'modulos');
 	Flight::render('busqueda', [], 'busqueda');	
 	Flight::render('especialista', []);
 });

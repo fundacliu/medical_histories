@@ -223,7 +223,62 @@
                         </div>
                     </div>
                 </div>
+            </div>        
+            <div class="col-lg-4 col-lg-offset-2">
+                <div class="media Modulos">
+                    <div class="icono">
+    <!--                     <div class="media-left">
+                            <a href="#">
+                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
+                            </a> 
+                        </div>-->
+                        <div class="media-body">
+                            <p class="ModuloEnca">Trabajo y Parto</p>
+                            <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            <button class="boton btn btn-default btn-lg" href="base">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div class="col-lg-4 col-lg-offset-2">
+                <div class="media Modulos">
+                    <div class="icono">
+    <!--                     <div class="media-left">
+                            <a href="#">
+                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
+                            </a> 
+                        </div>-->
+                        <div class="media-body">
+                            <p class="ModuloEnca">Intervencion Quirurgica</p>
+                            <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            <button class="boton btn btn-default btn-lg" href="base">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div class="col-lg-4 col-lg-offset-2">
+                <div class="media Modulos">
+                    <div class="icono">
+    <!--                     <div class="media-left">
+                            <a href="#">
+                                <img src="public/medical_histories/img/2.png" height="100" width="100" class="iconoModulo">
+                            </a> 
+                        </div>-->
+                        <div class="media-body">
+                            <p class="ModuloEnca">Historia del Recien Nacido</p>
+                            <p class="justificar sangria">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            <button class="boton btn btn-default btn-lg" href="base">Registrar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
+
         </div>
     </div>
 </section>
