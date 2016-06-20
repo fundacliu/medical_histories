@@ -233,6 +233,8 @@ class Factory {
 		
 		//$delete_db = '';
 		//$create_db = '';
+		$delete_group = '';
+		$sql_group = '';
 		
 		for ($i = 2; $i < $num; $i++) { 
 			$entities = Yaml::read($path . $filenames[$i]);
@@ -242,7 +244,7 @@ class Factory {
 				
 				foreach ($property as $name_entities => $value) {
 					$sql = $sql . 'CREATE TABLE ' . $name_database . '.' . $name_entities . ' (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, ';
-					$delete = $delete . 'DROP TABLE IF EXISTS '. $name_database . '.' . $name_entities . ';';
+					$delete = $delete . 'DROP TABLE IF EXISTS '. $name_database . '.' . $name_entities . ";\n";
 					foreach ($value as $k => $v) {
 						$sql = $sql . $k . ' ';
 						if ($v['type'] == 'varchar')
@@ -294,13 +296,15 @@ class Factory {
 						$fill = trim($fill, ', (');
 						$fill = $fill . ";\n";
 					}
-					try {
+					$delete_group = $delete_group . $delete; 
+					$sql_group = $sql_group . $sql; 
+					/*try {
 						//var_dump($delete . $sql);
 						$db->query($delete . $sql);
 						echo $name_database . '.' . $name_entities . ' has been created' . "\n";
 					} catch(PDOException $e) {
 						echo "error: " . $e->getMessage();
-					}
+					}*/
 					$sql = '';
 					$delete = '';
 					$num_iterator = 0;
@@ -310,9 +314,9 @@ class Factory {
 			}
 		}
 		try {
-			//var_dump($fk . $fill);
-			$db->query($fk . $fill);
-			echo $name_database . '.' . $name_entities . ' has been created' . "\n";
+			//var_dump($delete_group . $sql_group . $fk . $fill);
+			$db->query($delete_group . $sql_group . $fk . $fill);
+			echo "finished\n";
 		} catch(PDOException $e) {
 			echo "error: " . $e->getMessage();
 		}
