@@ -16,14 +16,14 @@
                 </li>
                 <?php if ($permiso == 'invitado') { ?>
                 <li>
-                    <a class="page-scroll" href="/Login">Ingresar</a>
+                    <a class="page-scroll" href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/Login">Ingresar</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/Registrar">Registrar</a>
+                    <a class="page-scroll" href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/Registrar">Registrar</a>
                 </li>
                 <?php } else { ?>
                 <li>
-                    <a class="page-scroll" href="/accion/cerrar">Cerrar</a>
+                    <a class="page-scroll" href="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/accion/cerrar">Cerrar</a>
                 </li>
                 <?php } ?>
             </ul>

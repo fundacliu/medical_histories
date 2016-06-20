@@ -4,7 +4,7 @@
 		<div class="register-logo">
 			<a href="#"><b></b>REGISTRATE</a>
 		</div>
-			<form action="/accion/registro" method="post">
+			<form action="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/accion/registro" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
 					<input type="text" class="form-control" placeholder="Usuario" name="nombres" value=""/>
