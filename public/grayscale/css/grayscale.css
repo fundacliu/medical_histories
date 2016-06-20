@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Chewy|Handlee|Cookie|Tangerine|Bad+Script);
 @import url(http://fonts.googleapis.com/css?family=Laila:400,700);
+.crear{
+  padding: 3%;
+  background-position: 50% 50%;
+  margin: 10%;
+}
 .fondo{
     background: url("../../medical_histories/img/2.jpg");
 }
@@ -49,8 +54,6 @@
     border: 0;
     outline: none;
     border-radius: 5%;
-    padding: 10px;
-    margin-right: 100%;
     font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -61,13 +64,6 @@
     transition: all 0.5s ease;
     -webkit-appearance: none;
 }
-
-
-
-
-
-
-
 @media(max-width:1200px) {
 .Modulos{
         width: 70%;
