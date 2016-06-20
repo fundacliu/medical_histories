@@ -14,12 +14,18 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
+                <?php if ($permiso == 'invitado') { ?>
                 <li>
-                    <a class="page-scroll" href="#about">Crear</a>
+                    <a class="page-scroll" href="/Login">Ingresar</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#download">Busqueda</a>
+                    <a class="page-scroll" href="/Registrar">Registrar</a>
                 </li>
+                <?php } else { ?>
+                <li>
+                    <a class="page-scroll" href="/accion/cerrar">Cerrar</a>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

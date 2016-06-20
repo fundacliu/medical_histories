@@ -4,9 +4,9 @@
 	<?php echo $head; ?>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-	<?php echo $head; ?>
 	<?php echo $menuSuperior; ?>
-	<?php echo $busqueda; ?>
+	<?php echo $header; ?>
+	<?php echo $moduloEspecialista; ?>
 	<?php echo $script; ?>
 </body>
 </html>
