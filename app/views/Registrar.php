@@ -16,7 +16,7 @@
 				</div>
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="cedula" name="cedula" value=""/>
-					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<span class="glyphicon glyphicon-floppy-saved form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<input type="password" class="form-control" placeholder="Password" name="pass"/>
@@ -24,7 +24,7 @@
 				</div>
 				<div class="form-group has-feedback">
 					<input type="password" class="form-control" placeholder="Repetir password" name="pass2"/>
-					<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="row MarginArriba">
 					<div class="col-xs-8">
@@ -33,7 +33,7 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="button">Acceder</button>
+						<button type="submit" class="button btn btn-default btn-lg">Acceder</button>
 					</div><!-- /.col -->
 				</div>
 			</form>

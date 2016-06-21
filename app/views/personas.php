@@ -24,11 +24,11 @@
 				</div>
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Cedula" name="cedula" value=""/>
-					<span class="glyphicon glyphicon-user form-control-feedback"></span>
+					<span class="glyphicon glyphicon-floppy-saved form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<input type="date" class="form-control" placeholder="Fecha de nacimiento" name="nacimiento" value=""/>
-					<span class="glyphicon glyphicon-user form-control-feedback"></span>
+					<span class="form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Direccion" name="direccion" value=""/>
@@ -36,11 +36,11 @@
 				</div>
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="profesion" name="profesion" value=""/>
-					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<span class="glyphicon glyphicon-education form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<input type="text" class="form-control" placeholder="Donde nacio" name="donde_nacio" value=""/>
-					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<span class="glyphicon glyphicon-globe form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
 					<select class="form-control" name="sexo">
@@ -56,7 +56,7 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="button">Registrar</button>
+						<button type="submit" class="button btn btn-default btn-lg">Registrar</button>
 					</div><!-- /.col -->
 				</div>
 			</form>

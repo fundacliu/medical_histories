@@ -314,12 +314,24 @@ class Factory {
 			}
 		}
 		try {
+			/*chdir(__DIR__ . '/../../../');
+
+			if (file_exists('query.sql'))
+				unlink('query.sql');
+			$file_read = fopen('query.sql', 'c');
+			fwrite($file_read, $delete_group . $sql_group . $fk . $fill);
+			*/
 			//var_dump($delete_group . $sql_group . $fk . $fill);
 			$db->query($delete_group . $sql_group . $fk . $fill);
 			echo "finished\n";
 		} catch(PDOException $e) {
 			echo "error: " . $e->getMessage();
 		}
+		$out = $delete_group . $sql_group;
+		$out = $out . $fk . $fill;
+
+
+		
 	}
 	public static function gen_sql($config) {
 
