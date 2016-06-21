@@ -4,7 +4,7 @@
 			<div class="login-logo">
 				<a href="#"><b></b>INICIAR SESION</a>
 			</div><!-- /.login-logo -->
-			<form action="/<?php echo trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/accion/login" method="post">
+			<form action="<?php echo ROOT; ?>/accion/login" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
 					<input type="text" class="form-control" placeholder="Usuario" name="nick"/>

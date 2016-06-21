@@ -5,10 +5,10 @@ require_once 'lib/choco/orm.php';
 require_once 'lib/choco/post.php';
 require_once 'config/autoloader.php';
 
-if (trim($_SERVER['SCRIPT_NAME'], "/index.php") == '/')
+if (trim($_SERVER['SCRIPT_NAME'], "/index.php") == '')
 	define('ROOT', '/' . trim($_SERVER['SCRIPT_NAME'], "/index.php"));
 else
-	define('ROOT', trim($_SERVER['SCRIPT_NAME'], "/index.php"));
+	define('ROOT', '/' . trim($_SERVER['SCRIPT_NAME'], "/index.php"));
 
 define('APP', './app/');
 define('VIEWS', APP . 'views');
