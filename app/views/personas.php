@@ -5,7 +5,7 @@
 			<a href="#"><b></b>REGISTRO</a>
 		</div>
         
-			<form action="<?php echo '/' . trim($_SERVER['SCRIPT_NAME'], "/index.php"); ?>/accion/persona" method="post">
+			<form action="<?php echo ROOT; ?>/accion/persona" method="post">
 				<input type="hidden" name="_token" value="">
 				<div class="form-group has-feedback MarginArriba">
 					<input type="text" class="form-control" placeholder="Nombres" name="nombres" value=""/>

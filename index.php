@@ -6,7 +6,7 @@ require_once 'lib/choco/post.php';
 require_once 'config/autoloader.php';
 
 if (trim($_SERVER['SCRIPT_NAME'], "/index.php") == '')
-	define('ROOT', '/' . trim($_SERVER['SCRIPT_NAME'], "/index.php"));
+	define('ROOT', trim($_SERVER['SCRIPT_NAME'], "/index.php"));
 else
 	define('ROOT', '/' . trim($_SERVER['SCRIPT_NAME'], "/index.php"));
 
@@ -35,7 +35,7 @@ Flight::route('/', function(){
 	Flight::render('script', [], 'script');
 	Flight::render('header', [], 'header');
 	Flight::render('busqueda', [], 'busqueda');
-    Flight::render('index', []); 
+    Flight::render('layout'); 
 });
 
 function base($cedula) {
@@ -52,8 +52,6 @@ function base($cedula) {
         	$persona->find('cedula = ' . $cedula);
         if ($persona->id() != '') {
 	        Flight::view()->set('persona', $persona);
-
-
 			$dia=date('j'); 
 			$mes=date('n'); 
 			$ano=date('Y'); 
@@ -72,10 +70,11 @@ function base($cedula) {
 			$edad=($ano-$anonac);
 			Flight::view()->set('edad', $edad);
 			Flight::render('headBase', [], 'headBase');
-			Flight::render('menuSuperior', [], 'menuSuperior');
+			
 			Flight::render('FormularioBase', [], 'FormularioBase');
-			Flight::render('headForm', [], 'headForm');
-			Flight::render('base');
+			
+			Flight::render('head', [], 'head');
+			Flight::render('layout'); 
 		}
 		else if (isset($cedula)) {
 			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
@@ -91,80 +90,74 @@ function base($cedula) {
 
 Flight::route('/base(/@cedula:[0-9]{7})', 'base');
 Flight::route('/base(/@cedula:[0-9]{8})', 'base');
-Flight::route('/Login', function(){
+Flight::route('/login', function(){
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('Login', []);
+	Flight::render('login', [], 'login');
+	Flight::render('layout'); 
 });
-Flight::route('/Registrar', function(){
+Flight::route('/registrar', function(){
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('Registrar', []);
-});
-Flight::route('/Recuperar', function(){
-	Flight::render('head', [], 'head');
-	Flight::render('script', [], 'script');
-	Flight::render('Recuperar', []);
+	Flight::render('registrar', [], 'registrar');
+	Flight::render('layout'); 
 });
 Flight::route('/orden', function(){
 	Flight::render('headBase', [], 'headBase');
+	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('ordenBase', [], 'ordenBase');
-	Flight::render('orden', []);
+	Flight::render('orden', [], 'orden');
+	Flight::render('layout'); 
 });
 Flight::route('/ingreso', function(){
 	Flight::render('headBase', [], 'headBase');
-	Flight::render('ingresoBase', [], 'ingresoBase');
+	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('ingreso', []);
+	Flight::render('ingreso', [], 'ingreso');
+	Flight::render('layout'); 
 });
 Flight::route('/egreso', function(){
 	Flight::render('headBase', [], 'headBase');
-	Flight::render('egresoBase', [], 'egresoBase');
+	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('egreso', []);
+	Flight::render('egreso', [], 'egreso');
+	Flight::render('layout'); 
 });
 Flight::route('/enfermeria', function(){
 	Flight::render('headBase', [], 'headBase');
-	Flight::render('enfermeriaBase', [], 'enfermeriaBase');
+	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('enfermeria', []);
+	Flight::render('enfermeria', [], 'enfermeria');
+	Flight::render('layout'); 
 });
 Flight::route('/clinica', function(){
 	Flight::render('headBase', [], 'headBase');
-	Flight::render('clinicaBase', [], 'clinicaBase');
+	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('clinica', []);
+	Flight::render('clinica', [], 'clinica');
+	Flight::render('layout'); 
 });
 Flight::route('/laboratorio', function(){
 	Flight::render('headBase', [], 'headBase');
+	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('laboratorio', []);
+	Flight::render('laboratorio', [], 'laboratorio');
+	Flight::render('layout'); 
 });
 Flight::route('/evolucion', function(){
 	Flight::render('headBase', [], 'headBase');
-	Flight::render('script', [], 'script');
-	Flight::render('evolucion', []);
-});
-
-
-Flight::route('/historia', function(){
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
-	Flight::render('menuSuperior', [], 'menuSuperior');
-	Flight::render('busqueda', [], 'busqueda');	
-	Flight::render('historia', []);
+	Flight::render('evolucion', [], 'evolucion');
+	Flight::render('layout'); 
 });
 Flight::route('/especialista', function(){
-	if (Session::exist(['permiso'])) 
-		Flight::view()->set('permiso', Session::get('permiso'));
-	else 
-		Flight::view()->set('permiso', 'invitado');
 	Flight::render('head', [], 'head');
+	Flight::render('header', [], 'header');
 	Flight::render('script', [], 'script');
 	Flight::render('menuSuperior', [], 'menuSuperior');
-	Flight::render('busqueda', [], 'busqueda');	
-	Flight::render('especialista', []);
+	Flight::render('moduloEspecialista', [], 'moduloEspecialista');
+	Flight::render('layout', []);
 });
 
 
@@ -187,16 +180,20 @@ Flight::route('/accion/registro', function(){
 			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
 		}
 		else {
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Registrar\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../registrar\'; </script>'; 
 		}
 	}
 	else {
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Registrar\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../registrar\'; </script>'; 
 	}
 });
 
-
-
+Flight::route('/personas', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('personas', [], 'personas');
+	Flight::render('layout');
+});
 
 Flight::route('/accion/login', function(){
 	if (POST::exist(["nick", "password"])) {
@@ -218,11 +215,11 @@ Flight::route('/accion/login', function(){
 			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
 		}
 		else {
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Login\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../login\'; </script>'; 
 		}
 	}
 	else {
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../Login\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../login\'; </script>'; 
 	}
 });
 
@@ -248,11 +245,6 @@ Flight::route('/accion/persona', function(){
 	}
 });
 
-Flight::route('/personas', function(){
-	Flight::render('head', [], 'head');
-	Flight::render('script', [], 'script');
-	Flight::render('personas', []);
-});
 Flight::route('/accion/cerrar', function(){
 	Session::close();
 	echo '<script language=Javascript> location.pathname = location.pathname + \'/../../\'; </script>'; 
