@@ -16,10 +16,10 @@
                 </li>
                 <?php if ($permiso == 'invitado') { ?>
                 <li>
-                    <a class="page-scroll" href="<?php echo ROOT; ?>/Login">Ingresar</a>
+                    <a class="page-scroll" href="<?php echo ROOT; ?>/login">Ingresar</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="<?php echo ROOT; ?>/Registrar">Registrar</a>
+                    <a class="page-scroll" href="<?php echo ROOT; ?>/registrar">Registrar</a>
                 </li>
                 <?php } else { ?>
                 <li>
