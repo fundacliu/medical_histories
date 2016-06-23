@@ -26,7 +26,10 @@
                 <div class="col-1">
                     <label>
                         Descripcion
-                        <input placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14">
+                        <textarea placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14">
+                            
+                        </textarea>
+              <!--          <input placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14"> -->
                     </label>
                 </div>
                 <div class="col-1">

@@ -23,12 +23,13 @@
                         <input placeholder="Nombre del Paciente" id="datoPasiente" name="datoPasiente" tabindex="1">
                     </label>
                 </div>
-
-
                 <div class="col-1">
                     <label>
                         Descripcion
-                        <input placeholder="Descripcion" id="egreso" name="egreso" tabindex="14">
+                        <textarea placeholder="Descripcion" id="egreso" name="egreso" tabindex="14">
+                            
+                        </textarea>
+              <!--          <input placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14"> -->
                     </label>
                 </div>
                 <div class="col-1">

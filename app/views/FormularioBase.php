@@ -7,31 +7,31 @@
                 <div class="col-1">
                     <label>
                         Departamento
-                        <input placeholder="A que departamento se dirige?" id="departamento" name="departamento" tabindex="1">
+                        <input required placeholder="A que departamento se dirige?" id="departamento" name="departamento" tabindex="1">
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Apellidos
-                        <input placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" tabindex="2" disabled>
+                        <input required placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" tabindex="2" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Fecha
-                        <input type="text" placeholder="<?php echo date('d/m/Y') ?>;" id="fecha" tabindex="3" disabled>
+                        <input type="number" required placeholder="<?php echo date('d/m/Y') ?>;" id="fecha" tabindex="3" disabled>
                     </label>
                 </div>
                 <div class="col-2">    
                     <label>
                         Nombres
-                        <input placeholder="<?php echo $persona->nombres(); ?>" id="nombres" tabindex="4" disabled>
+                        <input required placeholder="<?php echo $persona->nombres(); ?>" id="nombres" tabindex="4" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Hora
-                        <input type="text" placeholder="<?php echo date('h:i:s A'); ?>" id="hora" tabindex="5" disabled>
+                        <input type="text" required placeholder="<?php echo date('h:i:s A'); ?>" id="hora" tabindex="5" disabled>
                     </label>
                 </div>
                 <div class="col-3">      
@@ -46,51 +46,51 @@
                 <div class="col-3">  
                     <label>
                         Lugar de nacimiento
-                        <input placeholder="<?php echo $persona->Lugar_nacimiento(); ?>" id="lugarFecha" name="lugarFecha" tabindex="7" disabled>
+                        <input required placeholder="<?php echo $persona->Lugar_nacimiento(); ?>" id="lugarFecha" name="lugarFecha" tabindex="7" disabled>
                     </label>
                 </div>
                 <div class="col-3">
                     <label>
                         Edad
-                        <input placeholder="<?php echo $edad;?>" id="edad" tabindex="8" disabled>
+                        <input type="number" required placeholder="<?php echo $edad;?>" id="edad" tabindex="8" disabled>
                     </label>
                 </div>
 
                <div class="col-3">  
                     <label>
                         Ubicacion
-                        <input placeholder="Ubicacion" id="ubicacion" name="ubicacion" tabindex="9" disabled>
+                        <input required placeholder="Ubicacion" id="ubicacion" name="ubicacion" tabindex="9" disabled>
                     </label>
                 </div>
                 <div class="col-3">  
                     <label>
                         Numero de Historia
-                        <input placeholder="Numero de Historia" id="historia" name="historia" tabindex="10" >
+                        <input type="number" required placeholder="Numero de Historia" id="historia" name="historia" tabindex="10" >
                     </label>
                 </div>
                 <div class="col-3">
                     <label>
                         Clasificacion Economica
-                        <input placeholder="Clasificacion Economica" id="clasificacion" name="clasificacion" tabindex="11">
+                        <input required placeholder="Clasificacion Economica" id="clasificacion" name="clasificacion" tabindex="11">
                     </label>
                 </div>
 
                 <div class="col-2">
                     <label>
                         Cedula de Identidad
-                        <input placeholder="<?php echo $persona->apellidos(); ?>" id="cedula" name="cedula" tabindex="12" disabled>
+                        <input required type="number" placeholder="<?php echo $persona->apellidos(); ?>" id="cedula" name="cedula" tabindex="12" disabled>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Procedencia
-                        <input placeholder="Procedencia" id="procedencia" name="procedencia" tabindex="13" disabled>
+                        <input required placeholder="Procedencia" id="procedencia" name="procedencia" tabindex="13" disabled>
                     </label>
                 </div>
                 <div class="col-1">
                     <label>
                         Direccion Actual
-                        <input placeholder="<?php echo $persona->direccion(); ?>" id="direccion" name="direccion" tabindex="14" disabled>
+                        <input required placeholder="<?php echo $persona->direccion(); ?>" id="direccion" name="direccion" tabindex="14" disabled>
                     </label>
                 </div>
                 <div class="col-submit">

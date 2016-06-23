@@ -9,10 +9,13 @@
                         <input type="date" placeholder="Fecha" id="fecha" name="fecha" tabindex="3">
                     </label>
                 </div>
-                <div class="col-2">  
+                <div class="col-2">
                     <label>
-                        Evolucion de Enfermeria
-                        <input type="text" placeholder="Descripcion" id="enfermeria" name="enfermeria" tabindex="5">
+                        Descripcion
+                        <textarea placeholder="Descripcion" id="enfermeria" name="enfermeria" tabindex="14">
+                            
+                        </textarea>
+              <!--          <input placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14"> -->
                     </label>
                 </div>
                 <div class="col-4">  

@@ -3,22 +3,25 @@
     <div class="col-12">
         <div class="row">        
             <form onsubmit="return false">
-                <div class="col-3">  
+                <div class="col-2">  
                     <label>
                         Fecha
                         <input type="date" placeholder="Fecha" id="fecha" name="fecha" tabindex="3">
                     </label>
                 </div>
-                <div class="col-3">  
+                <div class="col-2">  
                     <label>
                         Hora
                         <input type="text" placeholder="Hora" id="hora" name="hora" tabindex="5">
                     </label>
                 </div>
-                <div class="col-3">  
+                <div class="col-1">
                     <label>
                         Descripcion
-                        <input type="" placeholder="Orden Medica" id="orden" name="orden" tabindex="7">
+                        <textarea placeholder="Descripcion" id="orden" name="orden" tabindex="14">
+                            
+                        </textarea>
+              <!--          <input placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14"> -->
                     </label>
                 </div>
                 <div class="col-submit">

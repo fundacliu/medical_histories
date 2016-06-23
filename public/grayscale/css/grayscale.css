@@ -1,5 +1,60 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Chewy|Handlee|Cookie|Tangerine|Bad+Script);
 @import url(http://fonts.googleapis.com/css?family=Laila:400,700);
+.caja {
+    margin: 10%;
+    border: 1px solid #009b90;
+    height: 30px;
+    overflow: hidden;
+    width: 60%;
+
+    position: relative;
+    color: white;
+    border-radius: 5%;
+}
+select {
+    background: transparent;
+    border: none;
+    font-size: 1.4em;
+    width: 250px;
+    background-color: #4DB6AC;
+    font-weight: bold;
+    border-right: 3%;
+}
+select:focus{ outline: none;
+
+}
+
+.caja::after{
+    content:"\025be";
+    display:table-cell;
+    padding-top:7px;
+    text-align:center;
+    width:30px;
+    height:30px;
+    background-color:#4DB6AC;
+    position:absolute;
+    top:0;
+    right:0px;  
+    pointer-events: none;
+}
+
+select:focus{ outline: none;}
+
+.caja::after{
+    content:"\025be";
+    display:table-cell;
+    padding-top:7px;
+    text-align:center;
+    width:30px;
+    height:30px;
+    background-color:#d9d9d9;
+    position:absolute;
+    top:0;
+    right:0px;  
+    pointer-events: none;
+}
+
+
 .crear{
   padding: 3%;
   background-position: 50% 50%;

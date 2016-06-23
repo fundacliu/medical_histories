@@ -16,12 +16,11 @@
 			<div class="row MarginArriba">
 				<div class="col-xs-8">
 					<div class="MarginAbajo">
-						<a href="Recuperar">No Recuerdas Tu Contraseña?</a><br>
-						<a href="Registrar" class="text-center">No Posees Cuenta? Registrate!</a>
+						<a href="registrar" class="text-center">No Posees Cuenta? Registrate!</a>
 					</div>
 				</div><!-- /.col -->
 				<div class="col-xs-4">
-					<button type="submit" class="button">Acceder</button>
+					<button type="submit" class="btn btn-default btn-lg">Acceder</button>
 				</div><!-- /.col -->
 			</div>
 		</form>

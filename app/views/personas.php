@@ -52,11 +52,11 @@
 				<div class="row MarginArriba">
 					<div class="col-xs-8">
 						<div class="MarginAbajo">
-
+							<a href="login" class="text-center">Ya Tienes Cuenta? Ingresa</a>       
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="button btn btn-default btn-lg">Registrar</button>
+						<button type="submit" class="btn btn-default btn-lg">Registrar</button>
 					</div><!-- /.col -->
 				</div>
 			</form>
