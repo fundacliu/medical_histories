@@ -3,6 +3,9 @@
 .fondo{
     background: url("../../medical_histories/img/2.jpg");
 }
+.arriba{
+  margin: 5%;
+}
 .check{
   position:relative;
 }
@@ -21,7 +24,6 @@
   outline: none;
   padding: 1.5%;
 }
-
 
 .btn {
     border-radius: 5%;

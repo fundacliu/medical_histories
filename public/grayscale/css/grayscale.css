@@ -1,15 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand|Chewy|Handlee|Cookie|Tangerine|Bad+Script);
 @import url(http://fonts.googleapis.com/css?family=Laila:400,700);
-.caja {
-    margin: 10%;
-    border: 1px solid #009b90;
-    height: 30px;
-    overflow: hidden;
-    width: 60%;
-
-    position: relative;
-    color: white;
-    border-radius: 5%;
+.arriba{
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 select {
     background: transparent;
@@ -23,7 +16,18 @@ select {
 select:focus{ outline: none;
 
 }
+/*
+.caja {
+    margin: 10%;
+    border: 1px solid #009b90;
+    height: 30px;
+    overflow: hidden;
+    width: 60%;
 
+    position: relative;
+    color: white;
+    border-radius: 5%;
+}
 .caja::after{
     content:"\025be";
     display:table-cell;
@@ -54,7 +58,7 @@ select:focus{ outline: none;}
     pointer-events: none;
 }
 
-
+*/
 .crear{
   padding: 3%;
   background-position: 50% 50%;
