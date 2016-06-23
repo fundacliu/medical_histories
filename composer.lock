@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b126d4e8cb28aa23f36e06398b02685b",
+    "hash": "edb3b47e9abae589f07e7c354c850e1c",
     "content-hash": "7045a62da8a4930eb302ff6bb090c792",
     "packages": [
         {
@@ -58,12 +58,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chocoland/orm.git",
-                "reference": "53d9332acb411d3b8d56d83e91db76e869aad11b"
+                "reference": "50bda1ad341a4ecd0ea4676556c6202b4a8f5927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chocoland/orm/zipball/53d9332acb411d3b8d56d83e91db76e869aad11b",
-                "reference": "53d9332acb411d3b8d56d83e91db76e869aad11b",
+                "url": "https://api.github.com/repos/chocoland/orm/zipball/50bda1ad341a4ecd0ea4676556c6202b4a8f5927",
+                "reference": "50bda1ad341a4ecd0ea4676556c6202b4a8f5927",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "source": "https://github.com/chocoland/orm/tree/master",
                 "issues": "https://github.com/chocoland/orm/issues"
             },
-            "time": "2016-06-22 04:23:28"
+            "time": "2016-06-23 00:53:10"
         },
         {
             "name": "symfony/yaml",

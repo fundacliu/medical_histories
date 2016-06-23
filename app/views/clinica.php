@@ -147,14 +147,18 @@
 
 					</label>
                 </div>
-	                     <div class="col-2">
-		                    <label>Biopsia</label>
-		                    <center class="check"><input type="checkbox" class="js-switch" tabindex="6"></center>
-	                	</div>
-	                     <div class="col-2">
-		                    <label>Autopsia</label>
-		                    <center class="check"><input type="checkbox" class="js-switch" tabindex="6"></center>
-	                	</div>
+
+                <div class="col-2">
+                    <label>Biopsia</label>
+                    <center style="position:relative; margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
+                </div>
+                <div class="col-2">
+                    <label>Autopsia</label>
+                    <center style="position:relative; margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
+                </div>
+
+
+
                 <div class="col-submit">
                     <button class="button btn btn-default btn-lg">Guardar</button>
                 </div>                 

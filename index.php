@@ -133,6 +133,20 @@ Flight::route('/clinica', function(){
 	Flight::render('clinica', [], 'clinica');
 	Flight::render('layout'); 
 });
+Flight::route('/clinica2', function(){
+	Flight::render('headBase', [], 'headBase');
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('clinica2', [], 'clinica2');
+	Flight::render('layout'); 
+});
+Flight::route('/clinica3', function(){
+	Flight::render('headBase', [], 'headBase');
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('clinica3', [], 'clinica3');
+	Flight::render('layout'); 
+});
 Flight::route('/laboratorio', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
