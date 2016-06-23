@@ -1,0 +1,10 @@
+medical_histories:
+    padres:
+        id_padre: 
+            type: int
+            join: personas
+            required: true
+        id_hijo: 
+            type: int
+            join: personas
+            required: true

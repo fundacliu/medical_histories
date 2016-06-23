@@ -13,6 +13,7 @@
 	<?php if (isset($ingreso)) echo $ingreso; ?>
 	<?php if (isset($egreso)) echo $egreso; ?>
 	<?php if (isset($personas)) echo $personas; ?>
+	<?php if (isset($menores)) echo $menores; ?>
 	<?php if (isset($enfermeria)) echo $enfermeria; ?>
 	<?php if (isset($clinica)) echo $clinica; ?>
 	<?php if (isset($laboratorio)) echo $laboratorio; ?>

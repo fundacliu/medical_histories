@@ -12,3 +12,14 @@
 	webshims.setOptions('forms-ext', {types: 'date'});
 	webshims.polyfill('forms forms-ext');
 </script>
+<script>
+	function padres(padre) {
+		console.log("input_" + padre);
+		var input_padre = document.getElementById("input_" + padre).value;
+		var padre = document.getElementById(padre);
+		console.log("<?php echo ROOT; ?>/base/" + input_padre);
+		padre.href = "<?php echo ROOT; ?>/base/" + input_padre;
+		//window.open("<?php echo ROOT; ?>/base/" + padre);
+
+	}
+</script>

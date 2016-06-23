@@ -1,5 +1,5 @@
 <?php
-if ($permiso == 'invitado') {
+if ($permiso != 'invitado') {
 ?>
 <!-- Busqueda -->
 <section class="content-section text-center">
