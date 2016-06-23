@@ -1,6 +1,14 @@
 {
+	"repositories": [
+        {
+            "url": "https://github.com/chocoland/orm.git",
+            "type": "vcs"
+        }
+    ],
     "require": {
-        "mikecao/flight": "^1.2",
-        "symfony/yaml": "*"
+        "mikecao/flight": "^1.2"
+    },
+    "require-dev": {
+        "chocoland/orm": "dev-master"
     }
 }

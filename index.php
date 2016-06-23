@@ -1,8 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
-require_once 'lib/choco/session.php';
-require_once 'lib/choco/orm.php';
-require_once 'lib/choco/post.php';
+require_once 'vendor/chocoland/orm/session.php';
+require_once 'vendor/chocoland/orm/orm.php';
+require_once 'vendor/chocoland/orm/post.php';
 require_once 'config/autoloader.php';
 
 if (trim($_SERVER['SCRIPT_NAME'], "/index.php") == '')
@@ -39,10 +39,6 @@ Flight::route('/', function(){
 });
 
 function base($cedula) {
-	/*if (Session::exist(['permiso'])) 
-		Flight::view()->set('permiso', Session::get('permiso'));
-	else 
-		Flight::view()->set('permiso', 'invitado');*/
 	$persona = new Personas();
     if (POST::exist(["cedula"]) || isset($cedula)) {
         $persona = new Personas();
@@ -77,15 +73,15 @@ function base($cedula) {
 			Flight::render('layout'); 
 		}
 		else if (isset($cedula)) {
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/personas\'; </script>'; 
 		}
 		else 
-    		echo '<script language=Javascript> location.pathname = location.pathname + \'/../personas\'; </script>'; 
+    		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/personas\'; </script>'; 
     } 
     else if (isset($cedula)) 
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/personas\'; </script>'; 
     else 
-    	echo '<script language=Javascript> location.pathname = location.pathname + \'/../personas\'; </script>'; 
+    	echo '<script language=Javascript> location.pathname = \'' . ROOT . '/personas\'; </script>'; 
 }
 
 Flight::route('/base(/@cedula:[0-9]{7})', 'base');
@@ -160,11 +156,6 @@ Flight::route('/especialista', function(){
 	Flight::render('layout', []);
 });
 
-
-
-
-
-
 Flight::route('/accion/registro', function(){
 	if (POST::exist(["cedula"])) {
 		$persona = new Personas();
@@ -177,14 +168,14 @@ Flight::route('/accion/registro', function(){
 			$usuario->id_persona($persona->id());
 			$usuario->creacion(date('Y-m-d H:i:s'));
 			$usuario->save();
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>'; 
 		}
 		else {
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../registrar\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/registrar\'; </script>'; 
 		}
 	}
 	else {
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../registrar\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/registrar\'; </script>'; 
 	}
 });
 
@@ -211,19 +202,42 @@ Flight::route('/accion/login', function(){
 				"creacion" => $usuario->creacion(),
 				"permiso" => $persona->id_permiso()
 			]);
-
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../..\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>'; 
 		}
 		else {
-			echo '<script language=Javascript> location.pathname = location.pathname + \'/../../login\'; </script>'; 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/login\'; </script>'; 
 		}
 	}
 	else {
-		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../login\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/login\'; </script>'; 
 	}
 });
 
 Flight::route('/accion/persona', function(){
+	if (POST::exist(["nombres", "apellidos", "tipo_cedula", "cedula", "nacimiento", "direccion", "profesion", "sexo", "donde_nacio"])) {
+		$persona = new Personas();
+		$persona->nombres(POST::get("nombres"));
+		$persona->apellidos(POST::get("apellidos"));
+		$persona->id_tipo_cedula(POST::get("tipo_cedula"));
+		$persona->cedula(POST::get("cedula"));
+		$persona->nacimiento(POST::get("nacimiento"));
+		$persona->direccion(POST::get("direccion"));
+		$persona->profesion(POST::get("profesion"));
+		$persona->id_sexo(POST::get("sexo"));
+		$persona->Lugar_nacimiento(POST::get("donde_nacio"));
+		$persona->registro(date("Y-m-d H:i:s"));
+		$persona->id_permiso(1);
+		$persona->save();
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/login\'' . POST::get("cedula") . '; </script>'; 
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../base/' . POST::get("cedula") . '\'; </script>'; 
+	} 
+	else {
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/personas\'; </script>'; 
+		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
+	}
+});
+
+Flight::route('/accion/menores', function(){
 	if (POST::exist(["nombres", "apellidos", "tipo_cedula", "cedula", "nacimiento", "direccion", "profesion", "sexo", "donde_nacio"])) {
 		$persona = new Personas();
 		$persona->nombres(POST::get("nombres"));
@@ -243,6 +257,13 @@ Flight::route('/accion/persona', function(){
 	else {
 		echo '<script language=Javascript> location.pathname = location.pathname + \'/../../personas\'; </script>'; 
 	}
+});
+
+Flight::route('/menores', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('menores', [], 'menores');
+	Flight::render('layout');
 });
 
 Flight::route('/accion/cerrar', function(){

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1e51f2ef5d37245ee81825a1b57cd6c0",
-    "content-hash": "c655bc7069ef0906729bc44986c07db4",
+    "hash": "b126d4e8cb28aa23f36e06398b02685b",
+    "content-hash": "7045a62da8a4930eb302ff6bb090c792",
     "packages": [
         {
             "name": "mikecao/flight",
@@ -49,6 +49,58 @@
             "description": "Flight is a fast, simple, extensible framework for PHP. Flight enables you to quickly and easily build RESTful web applications.",
             "homepage": "http://flightphp.com",
             "time": "2016-06-15 18:09:18"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "chocoland/orm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chocoland/orm.git",
+                "reference": "53d9332acb411d3b8d56d83e91db76e869aad11b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chocoland/orm/zipball/53d9332acb411d3b8d56d83e91db76e869aad11b",
+                "reference": "53d9332acb411d3b8d56d83e91db76e869aad11b",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/yaml": "*"
+            },
+            "bin": [
+                "bin/orm",
+                "bin/orm.bat",
+                "bin/orm.php"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chocoland\\": ""
+                }
+            },
+            "license": [
+                " GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jeferson De Freitas",
+                    "email": "jdefreitaspinto@gmail.com"
+                }
+            ],
+            "description": "A small and simple ORM for PHP",
+            "keywords": [
+                "autogenerator",
+                "chocoland",
+                "framework",
+                "orm"
+            ],
+            "support": {
+                "source": "https://github.com/chocoland/orm/tree/master",
+                "issues": "https://github.com/chocoland/orm/issues"
+            },
+            "time": "2016-06-22 04:23:28"
         },
         {
             "name": "symfony/yaml",
@@ -100,10 +152,11 @@
             "time": "2016-06-14 11:18:07"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "chocoland/orm": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

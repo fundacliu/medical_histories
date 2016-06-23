@@ -1,0 +1,28 @@
+medical_histories:
+    menores:
+        nombres: 
+            type: varchar
+            size: 50
+            required: true
+        apellidos: 
+            type: varchar
+            size: 50
+            required: true
+        nacimiento: 
+            type: date
+            required: true
+        direccion: 
+            type: varchar
+            size: 128
+            required: true
+        Lugar_nacimiento: 
+            type: varchar
+            size: 30
+            required: true
+        registro: 
+            type: date
+            required: true
+        id_sexo: 
+            type: int
+            join: sexo
+            required: true
