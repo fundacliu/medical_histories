@@ -18,6 +18,7 @@
 	<?php if (isset($clinica)) echo $clinica; ?>
 	<?php if (isset($clinica2)) echo $clinica2; ?>
 	<?php if (isset($clinica3)) echo $clinica3; ?>
+	<?php if (isset($Resultado)) echo $Resultado; ?>
 	<?php if (isset($laboratorio)) echo $laboratorio; ?>
 	<?php if (isset($moduloEspecialista)) echo $moduloEspecialista; ?>
 	<?php if (isset($evolucion)) echo $evolucion; ?>

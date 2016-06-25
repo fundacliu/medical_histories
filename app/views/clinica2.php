@@ -4,10 +4,12 @@
         <div class="row">        
             <form onsubmit="return false">
 
+
+
                 <div class="col-1">    
                     <label>
                         ANTECEDENTES PERSONALES
-                        <input>
+
                     </label>
                 </div>
 
@@ -183,7 +185,7 @@
                 <div class="col-1">    
                     <label>
                         ANTECEDENTES FAMILIARES
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -249,7 +251,7 @@
                 <div class="col-1">    
                     <label>
                         HABITOS PSICOBIOLOGICOS
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -311,13 +313,13 @@
                 <div class="col-1">    
                     <label>
                         EXAMEN FUNCIONAL
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-1">    
                     <label>
                         GENERAL
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -359,7 +361,7 @@
 <div class="col-1">    
                     <label>
                         PIEL
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -397,7 +399,7 @@
 <div class="col-1">    
                     <label>
                         CABEZA
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -435,7 +437,7 @@
 <div class="col-1">    
                     <label>
                         OIDOS
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -472,7 +474,7 @@
 <div class="col-1">    
                     <label>
                         OJOS
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -518,7 +520,7 @@
 <div class="col-1">    
                     <label>
                         NARIZ
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -556,7 +558,7 @@
 <div class="col-1">    
                     <label>
                         BOCA
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -586,7 +588,7 @@
 <div class="col-1">    
                     <label>
                         BOCA
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -619,7 +621,7 @@
 <div class="col-1">    
                     <label>
                         GARGANTA
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -650,7 +652,7 @@
 <div class="col-1">    
                     <label>
                         RESPIRATORIOS
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -689,7 +691,7 @@
 <div class="col-1">    
                     <label>
                         OSTEOMUSCULAR
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -724,7 +726,7 @@
 <div class="col-1">    
                     <label>
                         CARDIOVASCULAR
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -773,7 +775,7 @@
 <div class="col-1">    
                     <label>
                         GASTROINTESTINAL
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -844,7 +846,7 @@
 <div class="col-1">    
                     <label>
                         GENITOURINARIO
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -901,7 +903,7 @@
 <div class="col-1">    
                     <label>
                         GINECOLOGICOS
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">
@@ -950,7 +952,7 @@
 <div class="col-1">    
                     <label>
                         NERVIOSO Y MENTAL
-                        <input>
+
                     </label>
                 </div>
                 <div class="col-4">

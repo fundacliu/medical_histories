@@ -147,6 +147,17 @@ Flight::route('/clinica3', function(){
 	Flight::render('clinica3', [], 'clinica3');
 	Flight::render('layout'); 
 });
+
+Flight::route('/Resultado', function(){
+	Flight::render('headBase', [], 'headBase');
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('Resultado', [], 'Resultado');
+	Flight::render('layout'); 
+});
+
+
+
 Flight::route('/laboratorio', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');

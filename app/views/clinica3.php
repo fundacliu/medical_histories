@@ -7,13 +7,11 @@
                 <div class="col-1">    
                     <label>
                         EXAMEN FISICO (DATOS OBJETIVOS)
-                        <input>
                     </label>
                 </div>
                 <div class="col-1">    
                     <label>
                         PIEL
-                        <input>
                     </label>
                 </div>
 
@@ -99,7 +97,6 @@
                 <div class="col-1">    
                     <label>
                         CABEZA
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -141,7 +138,6 @@
                 <div class="col-1">    
                     <label>
                         OJOS
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -203,7 +199,6 @@
                 <div class="col-1">    
                     <label>
                         OIDOS
-                        <input>
                     </label>
                 </div>
 
@@ -250,7 +245,6 @@
 <div class="col-1">    
                     <label>
                         NARIZ
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -296,7 +290,6 @@
 <div class="col-1">    
                     <label>
                         BOCA
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -346,7 +339,6 @@
 <div class="col-1">    
                     <label>
                         FARINGE
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -383,7 +375,6 @@
 <div class="col-1">    
                     <label>
                         CUELLO
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -425,7 +416,6 @@
 <div class="col-1">    
                     <label>
                         GANGLIOS LINFATICOS
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -467,7 +457,6 @@
 <div class="col-1">    
                     <label>
                         TORAX
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -505,7 +494,6 @@
 <div class="col-1">    
                     <label>
                         SENOS
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -538,7 +526,6 @@
 <div class="col-1">    
                     <label>
                         PULMONES
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -581,7 +568,6 @@
 <div class="col-1">    
                     <label>
                         CORAZON
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -628,7 +614,6 @@
 <div class="col-1">    
                     <label>
                         VASO SANGUINEOS
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -659,7 +644,6 @@
 <div class="col-1">    
                     <label>
                         ABDOMEN
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -728,7 +712,6 @@
 <div class="col-1">    
                     <label>
                         GENITALES MASCULINOS
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -783,7 +766,6 @@
 <div class="col-1">    
                     <label>
                         GENITALES FEMENINOS
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -840,7 +822,6 @@
 <div class="col-1">    
                     <label>
                         RECTO
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -889,7 +870,6 @@
 <div class="col-1">    
                     <label>
                         HUESOS Y ARTICULACIONES
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -929,7 +909,6 @@
 <div class="col-1">    
                     <label>
                         EXTREMIDADES
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -973,7 +952,6 @@
 <div class="col-1">    
                     <label>
                         NEUROLOGICO Y PSIQUICO
-                        <input>
                     </label>
                 </div>
                 <div class="col-4">
@@ -1027,9 +1005,6 @@
                         </textarea>
                     </label>
                 </div>
-
-
-
                 <div class="col-submit">
                     <button class="button btn btn-default btn-lg">Guardar</button>
                 </div>                 
