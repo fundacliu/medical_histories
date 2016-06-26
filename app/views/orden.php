@@ -25,8 +25,29 @@
                     </label>
                 </div>
                 <div class="col-submit">
-                    <button class="button btn btn-default btn-lg">Guardar</button>
-                </div>                 
+                    <a data-toggle="modal" href="#example">
+                        <button class="button btn btn-default btn-lg">Guardar</button> 
+                    </a>
+                </div>    
+                <div id="example" class="modal fade">
+                    <div class="modal-dialog">   
+                        <div class="modal-content"> 
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    ×
+                                </button>
+                                <h3>Guardado Exitoso!</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Su historia se guardo sin problemas</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" data-dismiss="modal" class="btn btn-success">Cerrar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                                <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>            
             </form>
         </div>
     </div>

@@ -3,14 +3,12 @@
     <div class="col-12">
         <div class="row">        
             <form onsubmit="return false">
-            
-                <div class="col-5">
+                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8">
                     <label>
-                    Fulano de tal
                         <input required placeholder="Fulano de tal" id="departamento" name="departamento" tabindex="1">
                     </label>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
                     <label>
                         <div class="col-submit">
 	                    	<a href="#"><button class="button btn btn-default btn-lg"><i class="fa fa-check" aria-hidden="true"></i></button></a>
@@ -18,13 +16,12 @@
                     </label>
                 </div>   
 
-                <div class="col-5">
+                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8">
                     <label>
-                    Fulano de tal
                         <input required placeholder="Fulano de tal" id="departamento" name="departamento" tabindex="1">
                     </label>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
                     <label>
                         <div class="col-submit">
 	                    	<a href="#"><button class="button btn btn-default btn-lg"><i class="fa fa-check" aria-hidden="true"></i></button></a>
@@ -32,13 +29,12 @@
                     </label>
                 </div>   
 
-                <div class="col-5">
+                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8">
                     <label>
-                    Fulano de tal
                         <input required placeholder="Fulano de tal" id="departamento" name="departamento" tabindex="1">
                     </label>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
                     <label>
                         <div class="col-submit">
 	                    	<a href="#"><button class="button btn btn-default btn-lg"><i class="fa fa-check" aria-hidden="true"></i></button></a>
@@ -46,7 +42,7 @@
                     </label>
                 </div>
 
-
+                <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>
             </form>
         </div>
     </div>

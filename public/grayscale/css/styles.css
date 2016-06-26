@@ -13,6 +13,33 @@ src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Laila-Semibold.ttf);
 font-family: Allura;
 src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Allura-Regular.ttf);
 }
+
+.boton {
+  background:url("../../medical_histories/img/Return-48.png") /* Url de la imagen */ no-repeat center center, #365780 /* Color del botón */;
+  background-size: 60%; /* Tamaño de la imagen */
+  height: 60px;  /* Alto del botón */
+  width: 60px;  /* Ancho del botón */
+  display: table;
+  color: white;
+  display:scroll;
+  position:fixed;
+  bottom:5%;
+  right:5%;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow:
+  /* Sombras externa */
+  inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+  /* Sombra interna */
+  0 5px 20px rgba(0,0,0,.1);
+}
+
+/* Al presionar */
+.boton:active {
+  box-shadow: inset 0 5px 30px rgba(0,0,0,.2); /* Sombra interior */
+  background-size: 55%; /* Cambiamos el tamaño de la imagen */
+}
+
 .fondo{
     background: url("../../medical_histories/img/2.jpg");
 }
