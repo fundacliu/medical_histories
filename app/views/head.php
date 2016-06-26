@@ -5,8 +5,6 @@
 <meta name="description" content="">
 <meta name="author" content="De Freitas Jeferson y De Freitas Jessika">
 
-<script type="text/javascript" src="<?php echo ROOT; ?>/public/grayscale/js/switchery.min.js"></script>
-
 <!-- Bootstrap Core CSS -->
 <link href="<?php echo ROOT; ?>/public/grayscale/css/bootstrap.min.css" rel="stylesheet">
 

@@ -1008,9 +1008,9 @@
         </div>
     </div>
 </div>
-    <script type="text/javascript">
+    <!--script type="text/javascript">
     var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
         elems.forEach(function(html) {
             var switchery = new Switchery(html);
     });
-    </script>       
+    </script-->

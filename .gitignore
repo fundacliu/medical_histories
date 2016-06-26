@@ -3,4 +3,5 @@ phpmyadmin/
 generated-sql/
 composer.lock
 app/models/
+otro/
 config/autoloader.php
