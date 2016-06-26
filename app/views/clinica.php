@@ -161,7 +161,36 @@
 
                 <div class="col-submit">
                     <button class="button btn btn-default btn-lg">Guardar</button>
-                </div>                 
+                </div>     
+
+
+   <a data-toggle="modal" href="#example" class="btn btn-primary btn-large">
+      Abrir ventana modal
+   </a>
+   <div id="example" class="modal fade">
+   <div class="modal-dialog">   
+      <div class="modal-content"> 
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×
+            </button>
+            <h3>Cabecera de la ventana</h3>
+         </div>
+         <div class="modal-body">
+            <h4>Texto de la ventana</h4>
+            <p>Mas texto en la ventana.</p>                
+         </div>
+         <div class="modal-footer">
+            <a href="#" class="btn btn-success">Guardar</a>
+            <a href="#" data-dismiss="modal" class="btn">Cerrar</a>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+                            
             </form>
         </div>
     </div>
