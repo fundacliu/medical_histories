@@ -1,5 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Laila:400,700);
 
+@font-face {
+font-family: Laila;
+src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Laila-Bold.ttf);
+src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Laila-Light.ttf);
+src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Laila-Medium.ttf);
+src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Laila-Regular.ttf);
+src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Laila-Semibold.ttf);
+
+}
+@font-face {
+font-family: Allura;
+src: url(<?php echo ROOT; ?>/public/grayscale/fonts/Allura-Regular.ttf);
+}
 .fondo{
     background: url("../../medical_histories/img/2.jpg");
 }
@@ -91,7 +104,7 @@ h1 {
   display: block;
   font-size: 3.1em;
   line-height: 1.45em;
-  font-family: 'Laila', serif;
+  font-family: Laila;
   text-align: center;
   font-weight: bold;
   color: white;
