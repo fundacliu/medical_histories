@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                                <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>                 
+                <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>                 
             </form>
         </div>
     </div>

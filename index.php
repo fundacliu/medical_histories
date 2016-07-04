@@ -158,6 +158,7 @@ Flight::route('/Resultado', function(){
 
 
 
+
 Flight::route('/laboratorio', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
@@ -179,6 +180,13 @@ Flight::route('/especialista', function(){
 	Flight::render('menuSuperior', [], 'menuSuperior');
 	Flight::render('moduloEspecialista', [], 'moduloEspecialista');
 	Flight::render('layout', []);
+});
+Flight::route('/Autorizar', function(){
+	Flight::render('head', [], 'head');
+	Flight::render('script', [], 'script');
+	Flight::render('menuSuperior', [], 'menuSuperior');
+	Flight::render('Autorizar', [], 'Autorizar');
+	Flight::render('layout'); 
 });
 
 Flight::route('/accion/registro', function(){

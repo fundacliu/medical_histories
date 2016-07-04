@@ -179,7 +179,7 @@
                     </div>
                 </div>
             </div>
-   <!--         <a class='botoon' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a> -->
+          <a class='botoon' href='javascript:history.back(-1);'><i aria-hidden="true"></i></a> 
         </div>
     </div>
 </section>
