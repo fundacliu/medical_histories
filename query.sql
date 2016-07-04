@@ -55,7 +55,8 @@ ALTER TABLE medical_histories.personas ADD CONSTRAINT fk_personas_id_permiso FOR
 ALTER TABLE medical_histories.usuarios ADD INDEX(id_persona);
 ALTER TABLE medical_histories.usuarios ADD CONSTRAINT fk_usuarios_id_persona FOREIGN KEY (id_persona) REFERENCES medical_histories.personas (id); 
 INSERT INTO medical_histories.departamentos VALUES (null, 'example1'), (null, 'example2'), (null, 'example3');
-INSERT INTO medical_histories.permisos VALUES (null, 'usuario'), (null, 'doctor'), (null, 'historias'), (null, 'enfermera'), (null, 'externo');
+INSERT INTO medical_histories.permisos VALUES (null, 'usuario'), (null, 'doctor'), (null, 'historias'), (null, 'enfermera');
+INSERT INTO medical_histories.personas VALUES (null, 'admin', 'admin', '0', '1464739200', 'admin', 'admin', 'admin', '1464739200', '1', '1', '3');
 INSERT INTO medical_histories.respuestas VALUES (null, 'si'), (null, 'no');
 INSERT INTO medical_histories.sexo VALUES (null, 'masculino'), (null, 'fenenino');
 INSERT INTO medical_histories.tipo_cedula VALUES (null, 'V'), (null, 'E');
