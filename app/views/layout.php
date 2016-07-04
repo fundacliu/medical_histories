@@ -23,6 +23,7 @@
 	<?php if (isset($moduloEspecialista)) echo $moduloEspecialista; ?>
 	<?php if (isset($evolucion)) echo $evolucion; ?>
 	<?php if (isset($login)) echo $login; ?>
+	<?php if (isset($Autorizar)) echo $Autorizar; ?>
 	<?php if (isset($registro)) echo $login; ?>
 	<?php if (isset($script)) echo $script; ?>
 </body>

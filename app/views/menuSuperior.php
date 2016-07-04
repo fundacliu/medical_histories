@@ -23,6 +23,9 @@
                 </li>
                 <?php } else { ?>
                 <li>
+                    <a class="page-scroll" href="<?php echo ROOT; ?>/Autorizar">Autorizar</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="<?php echo ROOT; ?>/accion/cerrar">Cerrar</a>
                 </li>
                 <?php } ?>

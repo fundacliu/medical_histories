@@ -503,7 +503,17 @@ a:focus {
     background-size: cover;
     -o-background-size: cover;
 }
-
+.downloada-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../../medical_histories/img/14.jpg) no-repeat center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 
 @media(min-width:767px) {
 
