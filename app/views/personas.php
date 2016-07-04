@@ -2,7 +2,7 @@
 	<body class="fondo">
 		<div class="register-box-body fondo">
 		<div class="register-logo">
-			<a href="#"><b></b>REGISTRO</a>
+			<a href="#"><b></b>REGISTRO DE PERSONAL</a>
 		</div>
         
 			<form action="<?php echo ROOT; ?>/accion/persona" method="post">
@@ -52,7 +52,7 @@
 				<div class="row MarginArriba">
 					<div class="col-xs-8">
 						<div class="MarginAbajo">
-							<a href="login" class="text-center">Ya Tienes Cuenta? Ingresa</a>       
+							<a href="../../../login" class="text-center">Ya Tienes Cuenta? Ingresa</a>       
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-4">

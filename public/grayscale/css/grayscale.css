@@ -15,7 +15,7 @@ src: url(public/grayscale/fonts/Allura-Regular.ttf);
 }
 
 
-.boton {
+.botoon {
   background:url("../../medical_histories/img/Return-48.png") /* Url de la imagen */ no-repeat center center, #365780 /* Color del botón */;
   background-size: 60%; /* Tamaño de la imagen */
   height: 60px;  /* Alto del botón */
@@ -36,7 +36,7 @@ src: url(public/grayscale/fonts/Allura-Regular.ttf);
 }
 
 /* Al presionar */
-.boton:active {
+.botoon:active {
   box-shadow: inset 0 5px 30px rgba(0,0,0,.2); /* Sombra interior */
   background-size: 55%; /* Cambiamos el tamaño de la imagen */
 }
@@ -47,6 +47,7 @@ src: url(public/grayscale/fonts/Allura-Regular.ttf);
 .modulo{
   padding-left: 10%;
   padding-right: 10%;
+  float: right;
 }
 select {
     background: transparent;
@@ -116,7 +117,7 @@ select:focus{ outline: none;}
   background: rgba(19, 35, 47, 0.9);
   color:white;
   padding: 10%;
-  margin: 20%;
+  margin: 10% 20%;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);  /* sombra negra al rededor del form */
 }
@@ -198,6 +199,8 @@ select:focus{ outline: none;}
     text-indent: 0.2cm; 
 }
 .Modulos{
+    width: 100%;
+    height: auto;
     margin: 10% auto;
     padding: 10%;
     text-align: center;
@@ -226,7 +229,7 @@ select:focus{ outline: none;}
 .Laila{
   font-family: Laila;
 }
-.boton{
+.botoon{
     float: right;
 }
 .ColorLetraEnca{
