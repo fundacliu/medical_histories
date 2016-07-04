@@ -9,7 +9,7 @@
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Clinica <br> Parte 1</p>
                             <p class="justificar sangria">Ingrese al Modulo para Crear un Nuevo Registro!</p>
-                            <a href="clinica" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
+                            <a href="<?php echo ROOT; ?>/clinica" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Clinica <br> Parte 2</p>
                             <p class="justificar sangria">Ingrese al Modulo para Crear un Nuevo Registro!</p>
-                            <a href="clinica2" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
+                            <a href="<?php echo ROOT; ?>/clinica2" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="media-body">
                             <p class="ModuloEnca">Historia Clinica <br> Parte 3</p>
                             <p class="justificar sangria">Ingrese al Modulo para Crear un Nuevo Registro!</p>
-                            <a href="clinica3" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
+                            <a href="<?php echo ROOT; ?>/clinica3" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <div class="media-body">
                             <p class="ModuloEnca">Ficha de Ingreso</p>
                             <p class="justificar sangria">Ingrese al Modulo para Crear un Nuevo Registro!</p>
-                            <a href="ingreso" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
+                            <a href="<?php echo ROOT; ?>/ingreso" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <div class="media-body">
                             <p class="ModuloEnca">Ficha de Egreso</p>
                             <p class="justificar sangria">Ingrese al Modulo para Crear un Nuevo Registro!</p>
-                            <a href="egreso" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
+                            <a href="<?php echo ROOT; ?>/egreso" title=""><button class="modulo btn btn-default btn-lg" href="base"><i class="fa fa-plus" aria-hidden="true"> </i></button></a>
                         </div>
                     </div>
                 </div>

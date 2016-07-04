@@ -155,10 +155,6 @@ Flight::route('/Resultado', function(){
 	Flight::render('Resultado', [], 'Resultado');
 	Flight::render('layout'); 
 });
-
-
-
-
 Flight::route('/laboratorio', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
@@ -174,12 +170,16 @@ Flight::route('/evolucion', function(){
 	Flight::render('layout'); 
 });
 Flight::route('/especialista', function(){
-	Flight::render('head', [], 'head');
-	Flight::render('header', [], 'header');
-	Flight::render('script', [], 'script');
-	Flight::render('menuSuperior', [], 'menuSuperior');
-	Flight::render('moduloEspecialista', [], 'moduloEspecialista');
-	Flight::render('layout', []);
+	if (Session::exist(['permiso'])) {
+		Flight::render('head', [], 'head');
+		Flight::render('header', [], 'header');
+		Flight::render('script', [], 'script');
+		Flight::render('menuSuperior', [], 'menuSuperior');
+		Flight::render('moduloEspecialista', [], 'moduloEspecialista');
+		Flight::render('layout', []);
+	}
+	else 
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>';
 });
 Flight::route('/Autorizar', function(){
 	Flight::render('head', [], 'head');
@@ -193,7 +193,9 @@ Flight::route('/accion/registro', function(){
 	if (POST::exist(["cedula"])) {
 		$persona = new Personas();
 		$persona->find('cedula = ' . POST::get("cedula"));
-		if ($persona->id() != '' && POST::exist(["pass", "pass2", "correo", "nombres"]) && POST::get("pass") == POST::get("pass2")) {
+		echo $persona->id_permiso();
+		echo $persona->id_permiso() != 1;
+		if ($persona->id() != '' && $persona->id_permiso() != 1 && POST::exist(["pass", "pass2", "correo", "nombres"]) && POST::get("pass") == POST::get("pass2")) {
 			$usuario = new Usuarios();
 			$usuario->usuario(POST::get('nombres'));
 			$usuario->contraseña(POST::get('pass'));
@@ -210,6 +212,24 @@ Flight::route('/accion/registro', function(){
 	else {
 		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/registrar\'; </script>'; 
 	}
+});
+
+Flight::route('/accion/autorizar', function(){
+	if (POST::exist(["cedula", "permiso"])) {
+		$persona = new Personas();
+		$persona->find('cedula = ' . POST::get('cedula'));
+		if ($persona->lenght() == 1) {
+			echo $persona->id_permiso() . "<br>"; 
+			$persona->id_permiso(POST::get('permiso'));
+			echo $persona->id_permiso(); 
+			$persona->save();
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>'; 
+		}
+		else
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/Autorizar\'; </script>'; 
+	}
+	else
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/Autorizar\'; </script>'; 
 });
 
 Flight::route('/accion/busqueda', function(){
