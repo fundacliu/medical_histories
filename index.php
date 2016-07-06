@@ -98,56 +98,97 @@ Flight::route('/registrar', function(){
 	Flight::render('registrar', [], 'registrar');
 	Flight::render('layout'); 
 });
-Flight::route('/orden', function(){
+function orden($cedula) {
+	Flight::view()->set('cedula', $cedula);
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
 	Flight::render('orden', [], 'orden');
 	Flight::render('layout'); 
-});
-Flight::route('/ingreso', function(){
-	Flight::render('headBase', [], 'headBase');
-	Flight::render('head', [], 'head');
-	Flight::render('script', [], 'script');
-	Flight::render('ingreso', [], 'ingreso');
-	Flight::render('layout'); 
-});
-Flight::route('/egreso', function(){
-	Flight::render('headBase', [], 'headBase');
-	Flight::render('head', [], 'head');
-	Flight::render('script', [], 'script');
-	Flight::render('egreso', [], 'egreso');
-	Flight::render('layout'); 
-});
-Flight::route('/enfermeria', function(){
+}
+Flight::route('/orden/@cedula:[0-9]{7}', 'orden');
+Flight::route('/orden/@cedula:[0-9]{8}', 'orden');
+function ingreso($cedula) {
+	$persona = new Personas();
+	$persona->find('cedula = ' . $cedula);
+	if ($persona->lenght() == 1) {
+		$departamentos = new Departamentos();
+		$departamentos->find();
+		Flight::view()->set('cedula', $cedula);
+		Flight::view()->set('nombres', $persona->nombres());
+		Flight::view()->set('apellidos', $persona->apellidos());
+		Flight::view()->set('fecha', date("Y-m-d"));
+		Flight::view()->set('departamentos', $departamentos->array());
+		Flight::render('headBase', [], 'headBase');
+		Flight::render('head', [], 'head');
+		Flight::render('script', [], 'script');
+		Flight::render('ingreso', [], 'ingreso');
+		Flight::render('layout'); 
+	}
+	
+}
+Flight::route('/ingreso/@cedula:[0-9]{7}', 'ingreso');
+Flight::route('/ingreso/@cedula:[0-9]{8}', 'ingreso');
+function egreso($cedula) {
+	$persona = new Personas();
+	$persona->find('cedula = ' . $cedula);
+	if ($persona->lenght() == 1) {
+		$departamentos = new Departamentos();
+		$departamentos->find();
+		Flight::view()->set('cedula', $cedula);
+		Flight::view()->set('nombres', $persona->nombres());
+		Flight::view()->set('apellidos', $persona->apellidos());
+		Flight::view()->set('fecha', date("Y-m-d"));
+		Flight::view()->set('departamentos', $departamentos->array());
+		Flight::render('headBase', [], 'headBase');
+		Flight::render('head', [], 'head');
+		Flight::render('script', [], 'script');
+		Flight::render('egreso', [], 'egreso');
+		Flight::render('layout'); 
+	}
+}
+Flight::route('/egreso/@cedula:[0-9]{7}', 'egreso');
+Flight::route('/egreso/@cedula:[0-9]{8}', 'egreso');
+function enfermeria($cedula) {
+	Flight::view()->set('cedula', $cedula);
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
 	Flight::render('enfermeria', [], 'enfermeria');
 	Flight::render('layout'); 
-});
-Flight::route('/clinica', function(){
+}
+Flight::route('/enfermeria/@cedula:[0-9]{7}', 'enfermeria');
+Flight::route('/enfermeria/@cedula:[0-9]{8}', 'enfermeria');
+function clinica($cedula) {
+	Flight::view()->set('cedula', $cedula);
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
 	Flight::render('clinica', [], 'clinica');
 	Flight::render('layout'); 
-});
-Flight::route('/clinica2', function(){
+}
+Flight::route('/clinica/@cedula:[0-9]{7}', 'clinica');
+Flight::route('/clinica/@cedula:[0-9]{8}', 'clinica');
+function clinica2($cedula) {
+	Flight::view()->set('cedula', $cedula);
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
 	Flight::render('clinica2', [], 'clinica2');
 	Flight::render('layout'); 
-});
-Flight::route('/clinica3', function(){
+}
+Flight::route('/clinica2/@cedula:[0-9]{7}', 'clinica2');
+Flight::route('/clinica2/@cedula:[0-9]{8}', 'clinica2');
+function clinica3($cedula) {
+	Flight::view()->set('cedula', $cedula);
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
 	Flight::render('script', [], 'script');
 	Flight::render('clinica3', [], 'clinica3');
 	Flight::render('layout'); 
-});
-
+}
+Flight::route('/clinica3/@cedula:[0-9]{7}', 'clinica3');
+Flight::route('/clinica3/@cedula:[0-9]{8}', 'clinica3');
 Flight::route('/Resultado', function(){
 	Flight::render('headBase', [], 'headBase');
 	Flight::render('head', [], 'head');
@@ -170,13 +211,14 @@ Flight::route('/evolucion', function(){
 	Flight::render('layout'); 
 });
 Flight::route('/especialista', function(){
-	if (Session::exist(['permiso'])) {
+	if (Session::exist(['permiso']) && POST::exist(['cedula'])) {
+		Flight::view()->set('cedula', POST::get('cedula'));
 		Flight::render('head', [], 'head');
 		Flight::render('header', [], 'header');
 		Flight::render('script', [], 'script');
 		Flight::render('menuSuperior', [], 'menuSuperior');
 		Flight::render('moduloEspecialista', [], 'moduloEspecialista');
-		Flight::render('layout', []);
+		Flight::render('layout');
 	}
 	else 
 		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>';
@@ -472,6 +514,111 @@ Flight::route('/historia/agregar/menores', function(){
 Flight::route('/accion/cerrar', function(){
 	Session::close();
 	echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>'; 
+});
+
+Flight::route('/accion/ingreso', function(){
+	if (POST::exist(['cedula', 'descripcion', 'departamentos', 'fecha'])) {
+		$persona = new Personas();
+		$persona->find('cedula = ' . POST::get('cedula'));
+		if ($persona->lenght() == 1) {
+			$hospitalizacion = new Hospitalizacion();
+			$ingreso = new Ingreso();
+			$hospitalizacion->find('id_persona = ' . $persona->id());
+			if ($hospitalizacion->lenght() == 0) {
+				$hospitalizacion = new Hospitalizacion();
+				$hospitalizacion->id_persona($persona->id());
+				$hospitalizacion->dado_de_alta(2);
+				$hospitalizacion->id_departamento(POST::get('departamentos'));
+				$hospitalizacion->es_emergencia((POST::exist(['emergencia'])) ? 1 : 2);
+				$hospitalizacion->es_externa((POST::exist(['externa'])) ? 1 : 2);
+				$hospitalizacion->save();
+				$hospitalizacion->find('id_persona = ' . $persona->id());
+				$ingreso->id_hospitalizacion($hospitalizacion->id());
+				$ingreso->descripcion(POST::get('descripcion'));
+				$ingreso->creacion(POST::get('fecha'));
+				$ingreso->save();
+				echo '<script language=Javascript> window.close(); </script>'; 
+			}
+			else if ($hospitalizacion->lenght() >= 1) {
+				$num = $hospitalizacion->lenght();
+				$cont = 0;
+				foreach ($hospitalizacion->array() as $value) {
+					if ($value['dado_de_alta'] == 1) $cont += 1;
+				}
+				if ($num == $cont) {
+					$hospitalizacion = new Hospitalizacion();
+					$hospitalizacion->id_persona($persona->id());
+					$hospitalizacion->dado_de_alta(2);
+					$hospitalizacion->id_departamento(POST::get('departamentos'));
+					$hospitalizacion->es_emergencia((POST::exist(['emergencia'])) ? 1 : 2);
+					$hospitalizacion->es_externa((POST::exist(['externa'])) ? 1 : 2);
+					$hospitalizacion->save();
+					$hospitalizacion->find('id_persona = ' . $persona->id());
+					$ingreso->id_hospitalizacion($hospitalizacion->id()[$hospitalizacion->lenght() - 1]);
+					$ingreso->descripcion(POST::get('descripcion'));
+					$ingreso->creacion(POST::get('fecha'));
+					$ingreso->save();
+					echo '<script language=Javascript> window.close(); </script>'; 
+				}
+				else 
+					echo '<script language=Javascript> location.pathname = \'' . ROOT . '/ingreso/' . POST::get('cedula') . '\'; </script>'; 
+			}
+			else 
+				echo '<script language=Javascript> location.pathname = \'' . ROOT . '/ingreso/' . POST::get('cedula') . '\'; </script>'; 
+		}
+		else 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/ingreso/' . POST::get('cedula') . '\'; </script>'; 
+	}
+	else 
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/ingreso/' . POST::get('cedula') . '\'; </script>'; 
+});
+
+Flight::route('/accion/egreso', function(){
+	if (POST::exist(['cedula', 'descripcion', 'fecha'])) {
+		$persona = new Personas();
+		$persona->find('cedula = ' . POST::get('cedula'));
+		if ($persona->lenght() == 1) {
+			$hospitalizacion = new Hospitalizacion();
+			$egreso = new Egreso();
+			$hospitalizacion->find('id_persona = ' . $persona->id());
+			if ($hospitalizacion->lenght() == 1) {
+				$hospitalizacion->dado_de_alta(1);
+				$hospitalizacion->save();
+				$egreso->id_hospitalizacion($hospitalizacion->id());
+				$egreso->descripcion(POST::get('descripcion'));
+				$egreso->creacion(POST::get('fecha'));
+				$egreso->save();
+				echo '<script language=Javascript> window.close(); </script>'; 
+			}
+			else if ($hospitalizacion->lenght() > 1) {
+				$num = $hospitalizacion->lenght();
+				$cont = 0;
+				foreach ($hospitalizacion->array() as $value) {
+					if ($value['dado_de_alta'] == 1) $cont += 1;
+				}
+				$cont += 1;
+				if ($num == $cont) {
+					$hospitalizacion->find('id = ' . $hospitalizacion->id()[$hospitalizacion->lenght() - 1]);
+					$hospitalizacion->dado_de_alta(1);
+					$hospitalizacion->save();
+					$egreso->id_hospitalizacion($hospitalizacion->id());
+					var_dump($egreso->id_hospitalizacion());
+					$egreso->descripcion(POST::get('descripcion'));
+					$egreso->creacion(POST::get('fecha'));
+					$egreso->save();
+					echo '<script language=Javascript> window.close(); </script>'; 
+				}
+				else 
+					echo '<script language=Javascript> location.pathname = \'' . ROOT . '/egreso/' . POST::get('cedula') . '\'; </script>'; 
+			}
+			else 
+				echo '<script language=Javascript> location.pathname = \'' . ROOT . '/egreso/' . POST::get('cedula') . '\'; </script>'; 
+		}
+		else 
+			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/egreso/' . POST::get('cedula') . '\'; </script>'; 
+	}
+	else 
+		echo '<script language=Javascript> location.pathname = \'' . ROOT . '/egreso/' . POST::get('cedula') . '\'; </script>'; 
 });
 
 Flight::start();

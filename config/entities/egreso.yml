@@ -1,12 +1,8 @@
 medical_histories:
     egreso:
-        id_persona: 
+        id_hospitalizacion: 
             type: int
-            join: personas
-            required: true
-        id_departamento: 
-            type: int
-            join: departamentos
+            join: hospitalizacion
             required: true
         descripcion: 
             type: text
