@@ -6,8 +6,8 @@
 
                 <div class="col-3">  
                     <label>
-                        Fecha
-                        <input type="date" value="<?php echo $fecha; ?>" name="fecha" tabindex="3" readonly>
+                        Fecha y hora
+                        <input type="datetime-local" value="<?php echo $fecha; ?>" name="fecha" tabindex="3" readonly>
                     </label>
                 </div>
                 <div class="col-3">

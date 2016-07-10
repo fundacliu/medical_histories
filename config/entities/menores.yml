@@ -9,7 +9,7 @@ medical_histories:
             size: 50
             required: true
         nacimiento: 
-            type: date
+            type: datetime
             required: true
         direccion: 
             type: varchar
@@ -20,7 +20,7 @@ medical_histories:
             size: 30
             required: true
         registro: 
-            type: date
+            type: datetime
             required: true
         id_sexo: 
             type: int

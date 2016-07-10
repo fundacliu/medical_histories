@@ -21,5 +21,5 @@ medical_histories:
             type: text
             required: true
         creacion: 
-            type: date
+            type: datetime
             required: true

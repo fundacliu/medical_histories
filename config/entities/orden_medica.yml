@@ -1,5 +1,5 @@
 medical_histories:
-    ingreso:
+    orden_medica:
         id_hospitalizacion: 
             type: int
             join: hospitalizacion
