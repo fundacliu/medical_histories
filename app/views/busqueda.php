@@ -5,7 +5,7 @@ if ($permiso == 3) {
 <section class="content-section text-center">
     <div class="download-section">
         <div class="container" id="download">
-            <form action="<?php echo ROOT; ?>/accion/busqueda" method="POST" class="col-lg-8 col-lg-offset-2">
+            <form action="<?php echo ROOT; ?>/accion/busqueda" method="POST" class="col-lg-8 col-lg-offset-2" target="_black">
                 <h2 class="TituloGeneral Laila Completo">Busqueda</h2>
                 
    				<div class="col-md-8 col-md-offset-2 ">

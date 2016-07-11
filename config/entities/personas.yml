@@ -13,7 +13,7 @@ medical_histories:
             required: true
             unique: true
         nacimiento: 
-            type: datetime
+            type: date
             required: true
         direccion: 
             type: varchar

@@ -141,13 +141,10 @@ function egreso($cedula) {
 	$persona = new Personas();
 	$persona->find('cedula = ' . $cedula);
 	if ($persona->lenght() == 1) {
-		$departamentos = new Departamentos();
-		$departamentos->find();
 		Flight::view()->set('cedula', $cedula);
 		Flight::view()->set('nombres', $persona->nombres());
 		Flight::view()->set('apellidos', $persona->apellidos());
 		Flight::view()->set('fecha', date('Y-m-d\TH:i:s'));
-		Flight::view()->set('departamentos', $departamentos->array());
 		Flight::render('headBase', [], 'headBase');
 		Flight::render('head', [], 'head');
 		Flight::render('script', [], 'script');
@@ -269,9 +266,9 @@ Flight::route('/accion/registro', function(){
 			$usuario->contraseña(POST::get('pass'));
 			$usuario->correo(POST::get('correo'));
 			$usuario->id_persona($persona->id());
-			$fecha = date_create_from_format('Y-m-d\TH:i:s', POST::get('fecha')); 
-			$fecha = date_format($fecha, 'Y-m-d H:i:s');
-			$usuario->creacion($fecha);
+			//$fecha = date_create_from_format('Y-m-d\TH:i:s', POST::get('fecha')); 
+			//$fecha = date_format($fecha, 'Y-m-d H:i:s');
+			$usuario->creacion(POST::get('fecha'));
 			$usuario->save();
 			echo '<script language=Javascript> location.pathname = \'' . ROOT . '/\'; </script>'; 
 		}
@@ -611,7 +608,7 @@ Flight::route('/accion/egreso', function(){
 			$hospitalizacion = new Hospitalizacion();
 			$egreso = new Egreso();
 			$hospitalizacion->find('id_persona = ' . $persona->id());
-			if ($hospitalizacion->lenght() == 1) {
+			if ($hospitalizacion->lenght() == 1  && $hospitalizacion->dado_de_alta() == 2) {
 				$hospitalizacion->dado_de_alta(1);
 				$hospitalizacion->save();
 				$egreso->id_hospitalizacion($hospitalizacion->id());
@@ -622,7 +619,7 @@ Flight::route('/accion/egreso', function(){
 				$egreso->save();
 				echo '<script language=Javascript> window.close(); </script>'; 
 			}
-			else if ($hospitalizacion->lenght() > 1) {
+			else if ($hospitalizacion->lenght() > 1 && $hospitalizacion->dado_de_alta()[$hospitalizacion->lenght() - 1] == 2) {
 				$num = $hospitalizacion->lenght();
 				$cont = 0;
 				foreach ($hospitalizacion->array() as $value) {

@@ -58,12 +58,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chocoland/orm.git",
-                "reference": "7c13d68664b400be922aa618f17599caf7104283"
+                "reference": "77dbe0042089ccb58935ce2e5bcdf54dec040c19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chocoland/orm/zipball/7c13d68664b400be922aa618f17599caf7104283",
-                "reference": "7c13d68664b400be922aa618f17599caf7104283",
+                "url": "https://api.github.com/repos/chocoland/orm/zipball/77dbe0042089ccb58935ce2e5bcdf54dec040c19",
+                "reference": "77dbe0042089ccb58935ce2e5bcdf54dec040c19",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "source": "https://github.com/chocoland/orm/tree/master",
                 "issues": "https://github.com/chocoland/orm/issues"
             },
-            "time": "2016-07-03 22:41:38"
+            "time": "2016-07-10 07:12:33"
         },
         {
             "name": "symfony/yaml",
