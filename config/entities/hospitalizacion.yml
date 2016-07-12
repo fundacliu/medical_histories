@@ -1,0 +1,22 @@
+medical_histories:
+    hospitalizacion:
+        id_persona: 
+            type: int
+            join: personas
+            required: true
+        dado_de_alta: 
+            type: int
+            join: respuestas
+            required: true
+        id_departamento: 
+            type: int
+            join: departamentos
+            required: true
+        es_emergencia: 
+            type: int
+            join: respuestas
+            required: true
+        es_externa: 
+            type: int
+            join: respuestas
+            required: true

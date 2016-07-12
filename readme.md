@@ -24,7 +24,7 @@ por otra parte los directorios que apache escucha varian segun el sistema operat
 
 ```bash
 cd /srv/http
-git clone https://github.com/arodu/inm_azul ./
+git clone https://github.com/fundacliu/medical_histories ./
 composer install
 ```
 
@@ -48,11 +48,11 @@ orm insert
 
 ## Desde ahora usted puede ejecutar el proyecto
 
-Usted debe ejecutar apache según sea su sistema operativo y su instalación el procedimiento varia
+Usted debe ejecutar apache según sea su sistema operativo y su instalación el procedimiento varia, le recomendamo que inserte los datos admin.sql para crear el primer usuario administrativo
 
 ## Framework
 
-* [Flight](http://expressjs.com/) - Un micro-framework extensible para PHP
+* [Flight](http://flightphp.com) - Un micro-framework extensible para PHP
 
 ## Bibliotecas
 

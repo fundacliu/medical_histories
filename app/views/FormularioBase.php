@@ -13,31 +13,31 @@
                 <div class="col-2">  
                     <label>
                         Apellidos
-                        <input required placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" tabindex="2" disabled>
+                        <input required placeholder="<?php echo $persona->apellidos(); ?>" id="apellido" tabindex="2" readonly>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Fecha
-                        <input type="number" required placeholder="<?php echo date('d/m/Y') ?>;" id="fecha" tabindex="3" disabled>
+                        <input type="number" required placeholder="<?php echo date('d/m/Y'); ?>" id="fecha" tabindex="3" readonly>
                     </label>
                 </div>
                 <div class="col-2">    
                     <label>
                         Nombres
-                        <input required placeholder="<?php echo $persona->nombres(); ?>" id="nombres" tabindex="4" disabled>
+                        <input required placeholder="<?php echo $persona->nombres(); ?>" id="nombres" tabindex="4" readonly>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Hora
-                        <input type="text" required placeholder="<?php echo date('h:i:s A'); ?>" id="hora" tabindex="5" disabled>
+                        <input type="text" required placeholder="<?php echo date('h:i:s A'); ?>" id="hora" tabindex="5" readonly>
                     </label>
                 </div>
                 <div class="col-3">      
                     <label>
                         Sexo
-                        <select tabindex="6" disabled>
+                        <select tabindex="6" readonly>
                             <option>Masculino</option>
                             <option>Fenenino</option>
                         </select>
@@ -46,20 +46,20 @@
                 <div class="col-3">  
                     <label>
                         Lugar de nacimiento
-                        <input required placeholder="<?php echo $persona->Lugar_nacimiento(); ?>" id="lugarFecha" name="lugarFecha" tabindex="7" disabled>
+                        <input required placeholder="<?php echo $persona->Lugar_nacimiento(); ?>" id="lugarFecha" name="lugarFecha" tabindex="7" readonly>
                     </label>
                 </div>
                 <div class="col-3">
                     <label>
                         Edad
-                        <input type="number" required placeholder="<?php echo $edad;?>" id="edad" tabindex="8" disabled>
+                        <input type="number" required placeholder="<?php echo $edad;?>" id="edad" tabindex="8" readonly>
                     </label>
                 </div>
 
                <div class="col-3">  
                     <label>
                         Ubicacion
-                        <input required placeholder="Ubicacion" id="ubicacion" name="ubicacion" tabindex="9" disabled>
+                        <input required placeholder="Ubicacion" id="ubicacion" name="ubicacion" tabindex="9" readonly>
                     </label>
                 </div>
                 <div class="col-3">  
@@ -78,44 +78,27 @@
                 <div class="col-2">
                     <label>
                         Cedula de Identidad
-                        <input required type="number" placeholder="<?php echo $persona->apellidos(); ?>" id="cedula" name="cedula" tabindex="12" disabled>
+                        <input required type="number" placeholder="<?php echo $persona->apellidos(); ?>" id="cedula" name="cedula" tabindex="12" readonly>
                     </label>
                 </div>
                 <div class="col-2">  
                     <label>
                         Procedencia
-                        <input required placeholder="Procedencia" id="procedencia" name="procedencia" tabindex="13" disabled>
+                        <input required placeholder="Procedencia" id="procedencia" name="procedencia" tabindex="13" readonly>
                     </label>
                 </div>
                 <div class="col-1">
                     <label>
                         Direccion Actual
-                        <input required placeholder="<?php echo $persona->direccion(); ?>" id="direccion" name="direccion" tabindex="14" disabled>
+                        <input required placeholder="<?php echo $persona->direccion(); ?>" id="direccion" name="direccion" tabindex="14" readonly>
                     </label>
                 </div>
                 <div class="col-submit">
-                    <a data-toggle="modal" href="#example">
-                        <button class="button btn btn-default btn-lg">Guardar</button> 
+               
+                    <a data-toggle="modal" href="<?php echo ROOT; ?>">
+                        <button class="button btn btn-default btn-lg">Aceptar</button> 
                     </a>
                 </div>    
-                <div id="example" class="modal fade">
-                    <div class="modal-dialog">   
-                        <div class="modal-content"> 
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    ×
-                                </button>
-                                <h3>Guardado Exitoso!</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4>Su historia se guardo sin problemas</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" data-dismiss="modal" class="btn btn-success">Cerrar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>                 
             </form>
         </div>

@@ -22,9 +22,11 @@
                     <a class="page-scroll" href="<?php echo ROOT; ?>/registrar">Registrar</a>
                 </li>
                 <?php } else { ?>
-                <li>
-                    <a class="page-scroll" href="<?php echo ROOT; ?>/Autorizar">Autorizar</a>
-                </li>
+                    <?php if ($permiso == '3') { ?>
+                    <li>
+                        <a class="page-scroll" href="<?php echo ROOT; ?>/Autorizar">Autorizar</a>
+                    </li>
+                    <?php } ?>
                 <li>
                     <a class="page-scroll" href="<?php echo ROOT; ?>/accion/cerrar">Cerrar</a>
                 </li>

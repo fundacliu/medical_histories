@@ -1,11 +1,11 @@
 <?php
-if ($permiso != 'invitado') {
+if ($permiso == 3) {
 ?>
 <!-- Busqueda -->
 <section class="content-section text-center">
     <div class="download-section">
         <div class="container" id="download">
-            <form action="/accion/busqueda" method="POST" class="col-lg-8 col-lg-offset-2">
+            <form action="/accion/autorizar" method="POST" class="col-lg-8 col-lg-offset-2">
                 <h2 class="TituloGeneral Laila Completo">Autorizar</h2>
                 
    				<div class="col-md-8 col-md-offset-2 ">
@@ -17,11 +17,11 @@ if ($permiso != 'invitado') {
 
 	            <div class="col-md-8 col-md-offset-2 arriba">
 	                <label>
-	                    <select name="es_menor" tabindex="2">
-	                        <option value="no">Doctor</option>
-	                        <option value="si">Enfermera</option>
-	                        <option value="si">Historias Medicas</option>
-	                        <option value="si">Usuario</option>
+	                    <select name="permiso" tabindex="2">
+	                        <option value="2">Doctor</option>
+	                        <option value="4">Enfermera</option>
+	                        <option value="3">Historias Medicas</option>
+	                        <option value="1">Usuario</option>
 	                    </select>
 	                </label>
 	            </div>
@@ -30,6 +30,11 @@ if ($permiso != 'invitado') {
         </div>
     </div>
 </section>
+<?php
+}
+else {
+?>
+<script language=Javascript> location.pathname = '<?php echo ROOT; ?>/'; </script>; 
 <?php
 }
 ?>

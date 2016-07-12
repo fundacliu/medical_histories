@@ -2,52 +2,39 @@
     <h1 class="Semi">ORDEN MEDICA</h1>
     <div class="col-12">
         <div class="row">        
-            <form onsubmit="return false">
-                <div class="col-2">  
+            <form method="POST" action="<?php echo ROOT; ?>/accion/enfermeria">
+
+                <div class="col-3">  
                     <label>
-                        Fecha
-                        <input type="date" placeholder="Fecha" id="fecha" name="fecha" tabindex="3">
+                        Fecha y hora
+                        <input type="datetime-local" value="<?php echo $fecha; ?>" name="fecha" tabindex="3" readonly>
                     </label>
                 </div>
-                <div class="col-2">  
+                <div class="col-3">
                     <label>
-                        Hora
-                        <input type="text" placeholder="Hora" id="hora" name="hora" tabindex="5">
+                        Cedula de Identidad
+                        <input value="<?php echo $cedula; ?>" name="cedula" tabindex="12" readonly>
+                    </label>
+                </div>
+
+                <div class="col-3">
+                    <label>
+                        Nombre y Apellido
+                        <input placeholder="<?php echo $nombres . ' ' . $apellidos; ?>" id="DatosPasiente" tabindex="1" readonly>
                     </label>
                 </div>
                 <div class="col-1">
                     <label>
                         Descripcion
-                        <textarea placeholder="Descripcion" id="orden" name="orden" tabindex="14">
-                            
-                        </textarea>
-              <!--          <input placeholder="Descripcion" id="ingreso" name="ingreso" tabindex="14"> -->
+                        <textarea placeholder="Descripcion" id="descripcion" name="descripcion" tabindex="14" required></textarea>
                     </label>
                 </div>
                 <div class="col-submit">
-                    <a data-toggle="modal" href="#example">
-                        <button class="button btn btn-default btn-lg">Guardar</button> 
-                    </a>
+
+                    <input type="submit" class="btn btn-default btn-lg" value="Guardar" tabindex="3">    
                 </div>    
-                <div id="example" class="modal fade">
-                    <div class="modal-dialog">   
-                        <div class="modal-content"> 
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    ×
-                                </button>
-                                <h3>Guardado Exitoso!</h3>
-                            </div>
-                            <div class="modal-body">
-                                <h4>Su historia se guardo sin problemas</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" data-dismiss="modal" class="btn btn-success">Cerrar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-                                <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>            
+                
+                                <a class='boton' href='javascript:history.back(-1);'><i class="fa fa-reply" aria-hidden="true"></i></a>             
             </form>
         </div>
     </div>

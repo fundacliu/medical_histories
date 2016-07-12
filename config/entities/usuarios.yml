@@ -4,6 +4,7 @@ medical_histories:
             type: varchar
             size: 50
             required: true
+            unique: true
         contraseña: 
             type: varchar
             size: 50
@@ -12,8 +13,9 @@ medical_histories:
             type: varchar
             size: 50
             required: true
+            unique: true
         creacion: 
-            type: date
+            type: datetime
             required: true
         id_persona: 
             type: int

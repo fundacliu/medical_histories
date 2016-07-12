@@ -11,6 +11,7 @@ medical_histories:
         cedula: 
             type: int
             required: true
+            unique: true
         nacimiento: 
             type: date
             required: true
@@ -27,7 +28,7 @@ medical_histories:
             size: 30
             required: true
         registro: 
-            type: date
+            type: datetime
             required: true
         id_sexo: 
             type: int
