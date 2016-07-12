@@ -156,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-            </div>        
+            </div><!--        
             <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 ">
                 <div class="media Modulos">
                     <div class="icono">
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-            </div>        
+            </div>         -->
             <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4 ">
                 <div class="media Modulos">
                     <div class="icono">
